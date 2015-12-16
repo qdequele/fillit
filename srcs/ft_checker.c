@@ -11,43 +11,37 @@
 /* ************************************************************************** */
 
 #include <libft.h>
+#include "ft_fillit.h"
 
-int		check_char(char *str, int lg, int min)
+int		check_char(char *str, int x, int y)
 {
-	if (!(str[lg + min] == '.' || str[lg + min] == '#'
-		|| str[lg + min] == '\n'))
+	if (!(str[x + y] == '.' || str[x + y] == '#' || str[x + y] == '\n'))
 		return (0);
-	if (str[lg + min] == '#' && !(str[lg + min + 1] == '#'
-			|| str[lg + min - 1] == '#' || str[lg + min - 5] == '#'
-			|| str[lg + min + 5] == '#'))
+	if (str[x + y] == '#' && !(str[x + y + 1] == '#' | str[x + y - 1] == '#' 
+		|| str[x + y - 5] == '#' || str[x + y + 5] == '#'))
 		return (0);
 	return (1);
 }
 
-int		check_tetriminos(char *str)
+int		check_tetriminos(t_env *env)
 {
-	int		lg;
-	int		min;
-	int		nbc;
-	int		nbl;
-
-	lg = 0;
-	while (str[lg += 21])
+	env->x = 0;
+	while (env->str[env->x += 21])
 	{
-		min = 0;
-		nbc = 0;
-		nbl = 0;
-		while (str[lg + min] != '\0' && min < 20)
+		env->y = 0;
+		env->nbc = 0;
+		env->nbl = 0;
+		while (env->str[env->x + env->y] != '\0' && env->y < 20)
 		{
-			if (checkChar(str, lg, min) == 0)
+			if (checkChar(env->str, env->x, env->y) == 0)
 				return (0);
-			if (str[lg + min] == '#')
-				nbc++;
-			if (str[lg + min++] == '\n')
-				nbl++;
+			if (env->str[env->x + env->y] == '#')
+				env->nbc++;
+			if (env->str[env->x + env->y++] == '\n')
+				env->nbl++;
 		}
-		if (nbl != 4 || nbc != 4 || str[lg + min] != '\n'
-			|| str[lg + min] != '\0')
+		if (env->nbl != 4 || env->nbc != 4 || env->str[env->x + env->y] != '\n' 
+			|| env->str[env->x + env->y] != '\0')
 			return (0);
 	}
 	return (1);
