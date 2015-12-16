@@ -13,14 +13,18 @@
 #include <libft.h>
 #include "ft_fillit.h"
 
-int    ft_read_params(t_env *env)
+int    ft_read_params(t_env *env, char **av)
 {
+    int     fd;
 	int     ret;
     char    buf[BUF_SIZE + 1];
     char    *complete_buf;
 
     complete_buf = (char *)malloc(sizeof(char));
-    while ((ret = read(0, buf, BUF_SIZE)) != 0)
+    fd = open(av[0], O_RDWR, S_IRUSR | S_IWUSR);
+    if (fd == -1)
+        return (0);
+    while ((ret = read(fd, buf, BUF_SIZE)) != 0)
     {
         buf[ret] = '\0';
         complete_buf = ft_strjoin(complete_buf, buf);
