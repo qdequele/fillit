@@ -25,7 +25,7 @@ $(NAME):
 	@echo $(NAME)" compilled"
 
 libft:
-	$(MAKE) --debug=v -w -C libft re
+	$(MAKE) -C libft re
 	@cp $(LIBFT_PATH)/libft.a .
 
 clean:
@@ -34,11 +34,11 @@ clean:
 
 fclean: clean
 	@/bin/rm -rf $(NAME)
-	$(MAKE) --debug=v -w -C libft fclean
+	$(MAKE) -C libft fclean
 	@echo "Clean all .o and .a"
 
 lclean: fclean
-	$(MAKE) --debug=v -w -C libft fclean
+	$(MAKE) -C libft fclean
 	@echo "libft cleaned"
 
 re: fclean all
