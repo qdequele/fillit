@@ -17,7 +17,7 @@ int		check_char(char *str, int x, int y)
 {
 	if (!(str[x + y] == '.' || str[x + y] == '#' || str[x + y] == '\n'))
 		return (0);
-	if (str[x + y] == '#' && !(str[x + y + 1] == '#' | str[x + y - 1] == '#' 
+	if (str[x + y] == '#' && !(str[x + y + 1] == '#' | str[x + y - 1] == '#'
 		|| str[x + y - 5] == '#' || str[x + y + 5] == '#'))
 		return (0);
 	return (1);
@@ -33,14 +33,14 @@ int		check_tetriminos(t_env *env)
 		env->nbl = 0;
 		while (env->str[env->x + env->y] != '\0' && env->y < 20)
 		{
-			if (checkChar(env->str, env->x, env->y) == 0)
+			if (check_char(env->str, env->x, env->y) == 0)
 				return (0);
 			if (env->str[env->x + env->y] == '#')
 				env->nbc++;
 			if (env->str[env->x + env->y++] == '\n')
 				env->nbl++;
 		}
-		if (env->nbl != 4 || env->nbc != 4 || env->str[env->x + env->y] != '\n' 
+		if (env->nbl != 4 || env->nbc != 4 || env->str[env->x + env->y] != '\n'
 			|| env->str[env->x + env->y] != '\0')
 			return (0);
 	}

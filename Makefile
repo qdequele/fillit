@@ -13,7 +13,7 @@
 #Define the program
 PATH			= pwd
 NAME			= fillit
-_SRC			= ft_fillit.c ft_compute.c ft_validate.c
+_SRC			= ft_fillit.c ft_compute.c ft_checker.c
 SRC				= $(addprefix srcs/,$(_SRC))
 CFLAGS			= -Wall -Wextra -Werror
 
