@@ -23,6 +23,7 @@ typedef struct	s_env {
 	int			width;
 }				t_env;
 
-int    ft_read_params(t_env *env, char **av);
+int		ft_read_params(t_env *env, char **av);
+int		check_tetriminos(t_env *env);
 
 #endif
