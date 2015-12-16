@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_get_min_three(int a, int b, int c)
 {
 	return (ft_get_min(ft_get_min(a, b), c));

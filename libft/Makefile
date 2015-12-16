@@ -36,13 +36,13 @@ CFLAGS			= -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME):
-	@gcc -c $(CFLAGS) ft_isalpha.c
+	@gcc -c $(CFLAGS) $(LIBFT_SRC)
 	@ar rc $(NAME) $(LIBFT_O_FILES)
 	@ranlib $(NAME)
 	@echo "Library FT compiled"
 
 clean:
-	@/bin/rm -rf $(LIBFT_SRC)
+	@/bin/rm -rf $(LIBFT_O_FILES)
 	@echo "Clean all .o files"
 
 fclean: clean

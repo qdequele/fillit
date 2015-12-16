@@ -29,12 +29,12 @@ libft:
 	@cp $(LIBFT_PATH)/libft.a .
 
 clean:
-	@rm -rf bin
+	@/bin/rm -rf bin
 	@echo "Clean all .o files"
 
 fclean: clean
-	@/bin/rm -f $(NAME)
-	lclean
+	@/bin/rm -rf $(NAME)
+	$(MAKE) --debug=v -w -C libft fclean
 	@echo "Clean all .o and .a"
 
 lclean: fclean
