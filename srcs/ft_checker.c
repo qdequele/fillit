@@ -29,18 +29,18 @@ int		check_tetriminos(t_env *env)
 	while (env->str[env->x += 21])
 	{
 		env->y = 0;
-		env->nbc = 0;
-		env->nbl = 0;
+		env->width = 0;
+		env->height = 0;
 		while (env->str[env->x + env->y] != '\0' && env->y < 20)
 		{
 			if (check_char(env->str, env->x, env->y) == 0)
 				return (0);
 			if (env->str[env->x + env->y] == '#')
-				env->nbc++;
+				env->width++;
 			if (env->str[env->x + env->y++] == '\n')
-				env->nbl++;
+				env->height++;
 		}
-		if (env->nbl != 4 || env->nbc != 4 || env->str[env->x + env->y] != '\n'
+		if (env->height != 4 || env->width != 4 || env->str[env->x + env->y] != '\n'
 			|| env->str[env->x + env->y] != '\0')
 			return (0);
 	}

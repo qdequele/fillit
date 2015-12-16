@@ -23,4 +23,4 @@ typedef struct	s_env {
 	int			width;
 }				t_env;
 
-#end
+#endif
