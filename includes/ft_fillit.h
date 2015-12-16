@@ -13,9 +13,14 @@
 #ifndef		FT_FILLIT_H
 # define	FT_FILLIT_H
 
-typedef struct s_env {
+#include <string.h>
 
-}
-
+typedef struct	s_env {
+	char 		*str;
+	int			x;
+	int			y;
+	int			height;
+	int			width;
+}				t_env;
 
 #end
