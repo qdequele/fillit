@@ -15,15 +15,28 @@
 # define BUF_SIZE 7340032
 #include <string.h>
 
-typedef struct	s_env {
-	char 		*str;
-	int			x;
-	int			y;
-	int			height;
-	int			width;
-}				t_env;
+typedef struct		s_coord {
+	int				x;
+	int				y;
+}					t_coord;
 
-int		ft_read_params(t_env *env, char **av);
-int		check_tetriminos(t_env *env);
+typedef struct		s_tetriminos {
+	t_coord			coords[4];
+	t_tetriminos	*next;
+	t_tetriminos	*prev;
+}					t_tetriminos;
+
+typedef struct		s_env {
+	char 			*str;
+	int				x;
+	int				y;
+	int				height;
+	int				width;
+	t_tetriminos	*pieces;
+}					t_env;
+
+int					ft_read_params(t_env *env, char **av);
+int					check_tetriminos(t_env *env);
+int					push_tetrimino(t_env *env, t_coord *coords);
 
 #endif
