@@ -22,8 +22,8 @@ typedef struct		s_coord {
 
 typedef struct		s_tetriminos {
 	t_coord			coords[4];
-	t_tetriminos	*next;
-	t_tetriminos	*prev;
+	struct s_tetriminos	*next;
+	struct s_tetriminos	*prev;
 }					t_tetriminos;
 
 typedef struct		s_env {

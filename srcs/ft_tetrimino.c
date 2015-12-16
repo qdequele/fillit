@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <libft.h>
+#include <stdlib.h>
 #include "ft_fillit.h"
 
 int		push_tetrimino(t_env *env, t_coord *coords)
@@ -21,12 +22,12 @@ int		push_tetrimino(t_env *env, t_coord *coords)
 
 	if (!(t_new = (t_tetriminos *)malloc(sizeof(t_tetriminos))))
 		return (0);
-	ft_memcpy(t_new->coords, coords);
+	ft_memcpy(t_new->coords, coords, sizeof(t_coord));
 	t_new->next = NULL;
 	t_new->prev = NULL;
 	if (!(env->pieces))
 		env->pieces = t_new;
-	else 
+	else
 	{
 		t_tmp = env->pieces;
 		while (t_tmp->next)

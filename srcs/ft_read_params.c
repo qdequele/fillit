@@ -11,6 +11,11 @@
 /* ************************************************************************** */
 
 #include <libft.h>
+#include <stdlib.h>
+#include <fcntl.h>
+#include <sys/types.h>
+#include <sys/uio.h>
+#include <unistd.h>
 #include "ft_fillit.h"
 
 int    ft_read_params(t_env *env, char **av)
