@@ -12,5 +12,7 @@
 
 int	main(int ac, char **av)
 {
-	return ();
+  ac = 0;
+  **av = 0;
+	return (0);
 }

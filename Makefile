@@ -10,27 +10,22 @@
 #                                                                              #
 #******************************************************************************#
 
-#Define the libft
-LIBFT_NAME		= libft.a
-
 #Define the program
 PATH			= pwd
 NAME			= fillit
-_SRC			= srcs/ft_fillit.c srcs/ft_compute.c srcs/ft_validate.c
+_SRC			= ft_fillit.c ft_compute.c ft_validate.c
 SRC				= $(addprefix srcs/,$(_SRC))
 CFLAGS			= -Wall -Wextra -Werror
-O_FILES			= $(patsubst %.c,%.o, $(_SRC))
 
-all: $(LIBFT_NAME) $(NAME)
+all: libft $(NAME)
 
 $(NAME):
 	@mkdir bin
-	@gcc $(CFLAGS) $(SRC) -Ofast -L libft  -lft -I includes/ -o $(NAME)
-	@mv $(O_FILES) bin/
+	@gcc $(CFLAGS) $(SRC) -L libft  -lft -I includes/ -o $(NAME)
 	@echo $(NAME)" compilled"
 
-$(LIBFT_NAME):
-	@(cd libft && $(MAKE) re)
+libft:
+	$(MAKE) --debug=v -w -C libft re
 	@cp $(LIBFT_PATH)/libft.a .
 
 clean:
@@ -43,7 +38,7 @@ fclean: clean
 	@echo "Clean all .o and .a"
 
 lclean: fclean
-	@(cd libft && $(MAKE) fclean)
+	$(MAKE) --debug=v -w -C libft fclean
 	@echo "libft cleaned"
 
 re: fclean all
