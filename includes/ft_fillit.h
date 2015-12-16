@@ -12,7 +12,7 @@
 
 #ifndef		FT_FILLIT_H
 # define	FT_FILLIT_H
-
+# define BUF_SIZE 7340032
 #include <string.h>
 
 typedef struct	s_env {
