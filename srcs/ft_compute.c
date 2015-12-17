@@ -12,6 +12,7 @@
 
 #include <ft_fillit.h>
 
-int ft_compute(t_env env){
-  return (1);
+int		ft_compute(t_env *env){
+	
+	return (1);
 }

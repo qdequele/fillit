@@ -33,7 +33,7 @@ typedef struct		s_env {
 	int				y;
 	int				height;
 	int				width;
-  int       pieces_count;
+	int				pieces_count;
 	t_tetriminos	*pieces;
 }					t_env;
 
