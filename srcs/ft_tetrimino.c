@@ -19,39 +19,39 @@ int		ft_push_tetrimino(t_env *env, t_coord *coords)
 	t_tetriminos	*t_new;
 	t_tetriminos	*t_tmp;
 	int				i;
-//	t_tetriminos	*t_mid;
 
+	ft_putstr("test0\n");
 	if (!(t_new = (t_tetriminos *)malloc(sizeof(t_tetriminos))))
 		return (0);
-	//if (!(t_new->coords = (t_coord *)malloc(sizeof(t_coord))))
-	//	return (0);
 	ft_memcpy(t_new->coords, coords, sizeof(t_coord) * 4);
 	t_new->next = NULL;
-//	t_new->prev = NULL;
-	if (!(env->pieces))
+	ft_putstr("test1\n");
+	if (env->pieces == NULL)
+	{
+		ft_putstr("test1-1\n");
 		env->pieces = t_new;
+	}
 	else
 	{
+		ft_putstr("test1-2\n");
 		t_tmp = env->pieces;
 		while (t_tmp->next)
 		{
-//			t_mid = t_tmp;
 			t_tmp = t_tmp->next;
 		}
-//		if (t_mid)
-//			t_new->prev = t_mid;
-		ft_putstr("test\n");
-		i = 0;
-		while(i < 4){
-			ft_putchar('(');
-			ft_putnbr(t_tmp->coords[i].x);
-			ft_putstr(" ; ");
-			ft_putnbr(t_tmp->coords[i].y);
-			ft_putstr(") \n");
-			i++;
-		}
-		//t_tmp = t_new;
 	}
+	t_tmp = t_new;
+	ft_putstr("test2\n");
+	i = 0;
+	while(i < 4){
+		ft_putchar('(');
+		ft_putnbr(t_tmp->coords[i].x);
+		ft_putstr(" ; ");
+		ft_putnbr(t_tmp->coords[i].y);
+		ft_putstr(") \n");
+		i++;
+	}
+	free(t_new);
 	return (1);
 }
 
