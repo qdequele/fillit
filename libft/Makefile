@@ -42,12 +42,12 @@ $(NAME):
 	@echo "Library FT compiled"
 
 clean:
-	@/bin/rm -rf $(O_FILES)
+	@rm -rf $(O_FILES)
 	@echo "Clean all .o files"
 
 fclean:
-	@/bin/rm -rf $(O_FILES)
-	@/bin/rm -rf $(NAME)
+	@rm -rf $(O_FILES)
+	@rm -rf $(NAME)
 	@echo "Clean all .o and .a"
 
 re: fclean all
