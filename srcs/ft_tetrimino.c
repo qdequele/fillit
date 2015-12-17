@@ -29,10 +29,12 @@ int		ft_push_tetrimino(t_env *env, t_coord *coords)
 	{
 		t_tmp = env->pieces;
 		while (t_tmp->next)
+		{
 			t_tmp = t_tmp->next;
+			ft_putchar('-');
+		}
+		t_tmp->next = t_new;
 	}
-	t_tmp = t_new;
-	free(t_new);
 	return (1);
 }
 
@@ -41,7 +43,6 @@ void	ft_show_tetrimino(t_env *env)
 	t_tetriminos	*t_tmp;
 	int				i;
 
-	ft_putstr("------------\n");
 	t_tmp = env->pieces;
 	while (t_tmp->next)
 	{
