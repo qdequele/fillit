@@ -26,7 +26,6 @@ int		ft_parser(t_env *env)
 		i = 0;
 		while (env->str[env->x + env->y] != '\0' && env->y < 20)
 		{
-			ft_putchar(env->str[env->x + env->y]);
 			if (env->str[env->x + env->y] == '#'){
 				if (i == 0)
 					first[0] = *ft_new_coord(env->y / 5, env->y % 5);
