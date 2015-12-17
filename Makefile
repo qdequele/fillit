@@ -32,8 +32,8 @@ clean:
 	@echo "Clean all .o files"
 
 fclean:
-	clean
 	@make fclean -C libft
+	@/bin/rm -rf bin
 	@/bin/rm -rf $(NAME)
 	@echo "Clean all .o and .a"
 

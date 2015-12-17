@@ -45,7 +45,8 @@ clean:
 	@/bin/rm -rf $(O_FILES)
 	@echo "Clean all .o files"
 
-fclean: clean
+fclean:
+	@/bin/rm -rf $(O_FILES)
 	@/bin/rm -rf $(NAME)
 	@echo "Clean all .o and .a"
 
