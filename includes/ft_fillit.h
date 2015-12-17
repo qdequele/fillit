@@ -12,8 +12,9 @@
 
 #ifndef		FT_FILLIT_H
 # define	FT_FILLIT_H
-# define BUF_SIZE 7340032
+# define BUF_SIZE 5000
 #include <string.h>
+#include <stdlib.h>
 
 typedef struct		s_coord {
 	int				x;

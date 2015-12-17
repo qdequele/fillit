@@ -10,11 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_fillit.h>
+#include "ft_fillit.h"
+#include <libft.h>
 
-int	main()
+int		main(int ac, char **av)
 {
-  ac = 0;
-  **av = 0;
-	return (0);
+	t_env	*env;
+
+	env = (t_env *)malloc(sizeof(t_env));
+	if (ac >= 2)
+	{
+		if (!ft_read_params(env, av))
+			return (0);
+		if (!ft_check_tetriminos(env))
+			return (0);
+		if (!ft_parser(env))
+			return (0);
+		ft_putstr("ok\n");
+	}
+	return (1);
 }
+
