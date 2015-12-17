@@ -43,6 +43,7 @@ int					ft_check_char(char *str, int x, int y);
 int					ft_parser(t_env *env);
 int					ft_push_tetrimino(t_env *env, t_coord *coords);
 void				ft_show_tetrimino(t_env *env);
-t_coord				*ft_new_coord(int x, int y);
+t_coord			*ft_new_coord(int x, int y);
+int         ft_compute(t_env env);
 
 #endif

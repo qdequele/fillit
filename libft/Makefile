@@ -28,7 +28,7 @@ SRC			= ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 					ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
 					ft_putnbr_fd.c ft_lstadd.c ft_lstdel.c ft_lstdelone.c \
 					ft_lstiter.c ft_lstmap.c ft_lstnew.c ft_nblen.c \
-					ft_swap.c ft_show_tab.c
+					ft_swap.c ft_show_tab.c ft_sqrt.c
 
 O_FILES	= $(patsubst %.c,%.o, $(SRC))
 CFLAGS				= -Wall -Wextra -Werror

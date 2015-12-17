@@ -13,5 +13,6 @@
 #include <ft_fillit.h>
 
 int ft_compute(t_env env){
+  env->pieces_count = env->pieces_count;
   return (1);
 }
