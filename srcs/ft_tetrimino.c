@@ -18,13 +18,16 @@ int		ft_push_tetrimino(t_env *env, t_coord *coords)
 {
 	t_tetriminos	*t_new;
 	t_tetriminos	*t_tmp;
-	t_tetriminos	*t_mid;
+	int				i;
+//	t_tetriminos	*t_mid;
 
 	if (!(t_new = (t_tetriminos *)malloc(sizeof(t_tetriminos))))
 		return (0);
-	ft_memcpy(t_new->coords, coords, sizeof(t_coord));
+	//if (!(t_new->coords = (t_coord *)malloc(sizeof(t_coord))))
+	//	return (0);
+	ft_memcpy(t_new->coords, coords, sizeof(t_coord) * 4);
 	t_new->next = NULL;
-	t_new->prev = NULL;
+//	t_new->prev = NULL;
 	if (!(env->pieces))
 		env->pieces = t_new;
 	else
@@ -32,12 +35,22 @@ int		ft_push_tetrimino(t_env *env, t_coord *coords)
 		t_tmp = env->pieces;
 		while (t_tmp->next)
 		{
-			t_mid = t_tmp;
+//			t_mid = t_tmp;
 			t_tmp = t_tmp->next;
 		}
-		if (t_mid)
-			t_new->prev = t_mid;
-		t_tmp = t_new;
+//		if (t_mid)
+//			t_new->prev = t_mid;
+		ft_putstr("test\n");
+		i = 0;
+		while(i < 4){
+			ft_putchar('(');
+			ft_putnbr(t_tmp->coords[i].x);
+			ft_putstr(" ; ");
+			ft_putnbr(t_tmp->coords[i].y);
+			ft_putstr(") \n");
+			i++;
+		}
+		//t_tmp = t_new;
 	}
 	return (1);
 }
@@ -47,6 +60,7 @@ void	ft_show_tetrimino(t_env *env)
 	t_tetriminos	*t_tmp;
 	int				i;
 
+	ft_putstr("------------\n");
 	t_tmp = env->pieces;
 	while (t_tmp->next)
 	{
@@ -54,10 +68,12 @@ void	ft_show_tetrimino(t_env *env)
 		while(i < 4){
 			ft_putchar('(');
 			ft_putnbr(t_tmp->coords[i].x);
-			ft_putchar('-');
+			ft_putstr(" ; ");
 			ft_putnbr(t_tmp->coords[i].y);
-			ft_putstr("),");
+			ft_putstr(") \n");
+			i++;
 		}
+		t_tmp = t_tmp->next;
 		ft_putchar('\n');
 	}
 }
