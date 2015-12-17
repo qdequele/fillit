@@ -11,40 +11,32 @@
 #******************************************************************************#
 
 #Define the program
-PATH			= pwd
 NAME			= fillit
 _SRC			= ft_test.c ft_compute.c ft_checker.c ft_read_params.c ft_tetrimino.c ft_coords.c
 SRC				= $(addprefix srcs/,$(_SRC))
-CFLAGS			= -Wall -Wextra -Werror
+INCLUDE   = includes
+VPATH			= SRC INCLUDE
+CFLAGS		= -Wall -Wextra -Werror
 
-all: libft_all $(NAME)
+all: $(NAME)
 
 $(NAME):
 	@mkdir bin
-	@gcc $(CFLAGS) $(SRC) -L ./libft -lft -I includes/ -o $(NAME)
+	@make -C libft
+	@gcc $(CFLAGS) $(SRC) -Llibft -lft -Iincludes -Ilibft -o $(NAME)
 	@echo $(NAME)" compilled"
 
 clean:
-	libft_clean
+	@make clean -C libft
 	@/bin/rm -rf bin
 	@echo "Clean all .o files"
 
 fclean:
-	libft_fclean
 	clean
+	@make fclean -C libft
 	@/bin/rm -rf $(NAME)
 	@echo "Clean all .o and .a"
 
-re: libft_re fclean all
+re: fclean all
 
-libft_all:
-	@$(MAKE) -v -C libft all
-
-libft_clean:
-	@$(MAKE) -v -C libft clean
-
-libft_fclean:
-	@$(MAKE) -v -C libft fclean
-
-libft_re:
-	@make -v -C libft re
+.PHONY: all, clean, fclean, re

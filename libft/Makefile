@@ -13,7 +13,7 @@
 
 #Define the libft
 NAME		= libft.a
-LIBFT_SRC	= ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
+SRC			= ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 					ft_isprint.c ft_toupper.c ft_tolower.c ft_strlen.c \
 					ft_strcmp.c ft_strncmp.c ft_strcpy.c ft_strncpy.c \
 					ft_strcat.c ft_strncat.c ft_strlcat.c ft_strchr.c \
@@ -30,19 +30,19 @@ LIBFT_SRC	= ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 					ft_lstiter.c ft_lstmap.c ft_lstnew.c ft_nblen.c \
 					ft_swap.c ft_show_tab.c
 
-LIBFT_O_FILES	= $(patsubst %.c,%.o, $(LIBFT_SRC))
-CFLAGS			= -Wall -Wextra -Werror
+O_FILES	= $(patsubst %.c,%.o, $(SRC))
+CFLAGS				= -Wall -Wextra -Werror
 
 all: $(NAME)
 
 $(NAME):
-	@gcc -c $(CFLAGS) $(LIBFT_SRC)
-	@ar rc $(NAME) $(LIBFT_O_FILES)
+	@gcc -c $(CFLAGS) $(SRC)
+	@ar rc $(NAME) $(O_FILES)
 	@ranlib $(NAME)
 	@echo "Library FT compiled"
 
 clean:
-	@/bin/rm -rf $(LIBFT_O_FILES)
+	@/bin/rm -rf $(O_FILES)
 	@echo "Clean all .o files"
 
 fclean: clean
