@@ -30,7 +30,7 @@ int		ft_parser(t_env *env)
 				if (i == 0)
 					first[0] = *ft_new_coord(env->y / 5, env->y % 5);
 				coords[i] = *ft_new_coord((first[0].x) - (env->y / 5), (first[0].y) - (env->y % 5));
-			i++;
+				i++;
 			}
 			env->y++;
 		}
