@@ -36,8 +36,10 @@ typedef struct		s_env {
 }					t_env;
 
 int					ft_read_params(t_env *env, char **av);
-int					check_tetriminos(t_env *env);
-int					push_tetrimino(t_env *env, t_coord *coords);
+int					ft_check_tetriminos(t_env *env);
+int					ft_check_char(char *str, int x, int y);
+int					ft_parser(t_env *env);
+int					ft_push_tetrimino(t_env *env, t_coord *coords);
 t_coord				*ft_new_coord(int x, int y);
 
 #endif
