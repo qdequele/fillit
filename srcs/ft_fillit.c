@@ -19,7 +19,6 @@ int		main(int ac, char **av)
 
 	env = (t_env *)malloc(sizeof(t_env));
   env->pieces_count = 0;
-
 	env->pieces = NULL;
 	if (ac >= 2)
 	{
@@ -29,8 +28,6 @@ int		main(int ac, char **av)
 			return (0);
 		if (!ft_parser(env))
 			return (0);
-    if (!ft_parser(env))
-      return (0);
     if (!ft_compute(env, env->pieces))
       return (0);
 		ft_putstr("ok\n");
