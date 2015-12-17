@@ -86,5 +86,6 @@ void				ft_swap(int *a, int *b);
 int					ft_get_min(int a, int b);
 int					ft_get_min_three(int a, int b, int c);
 void				ft_show_tab(int *tab, int size);
+int         ft_sqrt(int nb);
 
 #endif

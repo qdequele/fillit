@@ -24,7 +24,7 @@ typedef struct		s_coord {
 typedef struct		s_tetri {
 	t_coord			coords[4];
 	struct s_tetri	*next;
-	struct s_tetri	*prev;
+	char        	letter;
 }					t_tetriminos;
 
 typedef struct		s_env {
@@ -35,6 +35,7 @@ typedef struct		s_env {
 	int				width;
 	int				pieces_count;
 	t_tetriminos	*pieces;
+	char          	**map;
 }					t_env;
 
 int					ft_read_params(t_env *env, char **av);
@@ -44,5 +45,6 @@ int					ft_parser(t_env *env);
 int					ft_push_tetrimino(t_env *env, t_coord *coords);
 void				ft_show_tetrimino(t_env *env);
 t_coord				*ft_new_coord(int x, int y);
+int         		ft_compute(t_env *env, t_tetriminos *current_tetrimino);
 
 #endif
