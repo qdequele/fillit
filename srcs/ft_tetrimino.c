@@ -25,6 +25,7 @@ int		ft_push_tetrimino(t_env *env, t_coord *coords)
 	ft_memcpy(t_new->coords, coords, sizeof(t_coord));
 	t_new->next = NULL;
 	t_new->prev = NULL;
+	env->pieces_count++;
 	if (!(env->pieces))
 		env->pieces = t_new;
 	else
