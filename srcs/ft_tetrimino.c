@@ -53,10 +53,10 @@ void	ft_show_tetrimino(t_env *env)
 		i = 0;
 		while(i < 4){
 			ft_putchar('(');
-			ft_putnbr(t_tmp->coords[i]->x);
+			ft_putnbr(t_tmp->coords[i].x);
 			ft_putchar('-');
-			ft_putnbr(t_tmp->coords[i]->y);
-			ft_putstr('),');
+			ft_putnbr(t_tmp->coords[i].y);
+			ft_putstr("),");
 		}
 		ft_putchar('\n');
 	}

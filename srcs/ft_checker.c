@@ -26,7 +26,7 @@ int		ft_check_char(char *str, int x, int y)
 int		ft_check_tetriminos(t_env *env)
 {
 	env->x = 0;
-	while (env->str[env->x += 21])
+	while (env->str[env->x] != '\0')
 	{
 		env->y = 0;
 		env->width = 0;
@@ -38,11 +38,12 @@ int		ft_check_tetriminos(t_env *env)
 			if (env->str[env->x + env->y] == '#')
 				env->width++;
 			if (env->str[env->x + env->y++] == '\n')
-				env->height++;
+				env->height++;	
 		}
-		if (env->height != 4 || env->width != 4 || env->str[env->x + env->y] != '\n'
-			|| env->str[env->x + env->y] != '\0')
-			return (0);
+		if (env->height != 4 || env->width != 4 || (env->str[env->x + env->y] != '\n'
+					&& env->str[env->x + env->y] != '\0'))
+			return (0);	
+		env->x += 21;
 	}
 	return (1);
 }

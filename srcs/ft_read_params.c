@@ -20,23 +20,24 @@
 
 int    ft_read_params(t_env *env, char **av)
 {
-    int     fd;
-	int     ret;
-    char    buf[BUF_SIZE + 1];
-    char    *complete_buf;
+	int		fd;
+	int		ret;
+	char	buf[BUF_SIZE + 1];
+	char 	*complete_buf;
 
-    complete_buf = (char *)malloc(sizeof(char));
-    fd = open(av[0], O_RDWR, S_IRUSR | S_IWUSR);
-    if (fd == -1)
-        return (0);
-    while ((ret = read(fd, buf, BUF_SIZE)) != 0)
-    {
-        buf[ret] = '\0';
-        complete_buf = ft_strjoin(complete_buf, buf);
-    }
-    ft_strncpy(env->str, complete_buf, ft_strlen(complete_buf));
-    if (ft_strlen(env->str) > 1)
-        return (1);
-    else
-        return (0);
+	complete_buf = (char *)malloc(sizeof(char));
+	fd = open(av[1], O_RDWR, S_IRUSR | S_IWUSR);
+	if (fd == -1)
+		return (0);
+	while ((ret = read(fd, buf, BUF_SIZE)) != 0)
+	{
+		buf[ret] = '\0';
+		complete_buf = ft_strjoin(complete_buf, buf);
+	}
+	env->str = (char *)malloc(sizeof(char) * (ft_strlen(complete_buf) + 1));
+	ft_strncpy(env->str, complete_buf, ft_strlen(complete_buf));
+	if (ft_strlen(env->str) > 1)
+		return (1);
+	else
+		return (0);
 }
