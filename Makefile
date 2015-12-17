@@ -17,28 +17,34 @@ _SRC			= ft_test.c ft_compute.c ft_checker.c ft_read_params.c ft_tetrimino.c
 SRC				= $(addprefix srcs/,$(_SRC))
 CFLAGS			= -Wall -Wextra -Werror
 
-all: libft $(NAME)
+all: libft_all $(NAME)
 
 $(NAME):
 	@mkdir bin
-	@gcc $(CFLAGS) $(SRC) -L libft  -lft -I includes/ -o $(NAME)
+	@gcc $(CFLAGS) $(SRC) -L ./libft -lft -I includes/ -o $(NAME)
 	@echo $(NAME)" compilled"
 
-libft:
-	$(MAKE) -C libft re
-	@cp $(LIBFT_PATH)/libft.a .
-
 clean:
+	libft_clean
 	@/bin/rm -rf bin
 	@echo "Clean all .o files"
 
-fclean: clean
+fclean:
+	libft_fclean
+	clean
 	@/bin/rm -rf $(NAME)
-	$(MAKE) -C libft fclean
 	@echo "Clean all .o and .a"
 
-lclean: fclean
-	$(MAKE) -C libft fclean
-	@echo "libft cleaned"
+re: libft_re fclean all
 
-re: fclean all
+libft_all:
+	@$(MAKE) -v -C libft all
+
+libft_clean:
+	@$(MAKE) -v -C libft clean
+
+libft_fclean:
+	@$(MAKE) -v -C libft fclean
+
+libft_re:
+	@make -v -C libft re
