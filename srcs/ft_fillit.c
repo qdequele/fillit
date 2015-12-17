@@ -31,7 +31,7 @@ int		main(int ac, char **av)
 			return (0);
     if (!ft_parser(env))
       return (0);
-    if (!ft_compute(env))
+    if (!ft_compute(env, env->pieces))
       return (0);
 		ft_putstr("ok\n");
 	}

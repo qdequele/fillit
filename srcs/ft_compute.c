@@ -11,8 +11,9 @@
 /* ************************************************************************** */
 
 #include <ft_fillit.h>
+#include <libft.h>
 
-int ft_compute(t_env env){
-  env->pieces_count = env->pieces_count;
+int ft_compute(t_env *env, t_tetriminos *current_tetrimino){
+  env->map[0][0] = current_tetrimino->letter;
   return (1);
 }

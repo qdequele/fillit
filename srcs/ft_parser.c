@@ -13,6 +13,22 @@
 #include <libft.h>
 #include "ft_fillit.h"
 
+int		ft_generate_map(t_env *env){
+	int i;
+
+	i = 0;
+	env->map = (char **)malloc(sizeof(char *) * ft_sqrt(env->pieces_count * 4));
+	if (!env->map)
+		return (0);
+	while (i < ft_sqrt(env->pieces_count * 4)){
+		env->map[i] = (char *)malloc(sizeof(char) * ft_sqrt(env->pieces_count * 4));
+		if (!env->map[i])
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
 int		ft_parser(t_env *env)
 {
 	t_coord			coords[4];
@@ -37,5 +53,5 @@ int		ft_parser(t_env *env)
 		ft_push_tetrimino(env, coords);
 		env->x += 21;
 	}
-	return (1);
+	return (ft_generate_map(env));
 }
