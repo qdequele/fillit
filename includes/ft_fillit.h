@@ -20,10 +20,10 @@ typedef struct		s_coord {
 	int				y;
 }					t_coord;
 
-typedef struct		s_tetriminos {
+typedef struct		s_tetri {
 	t_coord			coords[4];
-	struct s_tetriminos	*next;
-	struct s_tetriminos	*prev;
+	struct s_tetri	*next;
+	struct s_tetri	*prev;
 }					t_tetriminos;
 
 typedef struct		s_env {
@@ -40,6 +40,7 @@ int					ft_check_tetriminos(t_env *env);
 int					ft_check_char(char *str, int x, int y);
 int					ft_parser(t_env *env);
 int					ft_push_tetrimino(t_env *env, t_coord *coords);
+void				ft_show_tetrimino(t_env *env);
 t_coord				*ft_new_coord(int x, int y);
 
 #endif
