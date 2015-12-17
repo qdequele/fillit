@@ -13,7 +13,7 @@
 #include <libft.h>
 #include "ft_fillit.h"
 
-int		check_char(char *str, int x, int y)
+int		ft_check_char(char *str, int x, int y)
 {
 	if (!(str[x + y] == '.' || str[x + y] == '#' || str[x + y] == '\n'))
 		return (0);
@@ -23,7 +23,7 @@ int		check_char(char *str, int x, int y)
 	return (1);
 }
 
-int		check_tetriminos(t_env *env)
+int		ft_check_tetriminos(t_env *env)
 {
 	env->x = 0;
 	while (env->str[env->x += 21])
@@ -33,7 +33,7 @@ int		check_tetriminos(t_env *env)
 		env->height = 0;
 		while (env->str[env->x + env->y] != '\0' && env->y < 20)
 		{
-			if (check_char(env->str, env->x, env->y) == 0)
+			if (ft_check_char(env->str, env->x, env->y) == 0)
 				return (0);
 			if (env->str[env->x + env->y] == '#')
 				env->width++;

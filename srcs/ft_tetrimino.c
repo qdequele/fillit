@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include "ft_fillit.h"
 
-int		push_tetrimino(t_env *env, t_coord *coords)
+int		ft_push_tetrimino(t_env *env, t_coord *coords)
 {
 	t_tetriminos	*t_new;
 	t_tetriminos	*t_tmp;
@@ -40,4 +40,24 @@ int		push_tetrimino(t_env *env, t_coord *coords)
 		t_tmp = t_new;
 	}
 	return (1);
+}
+
+void	ft_show_tetrimino(t_env *env)
+{
+	t_tetriminos	*t_tmp;
+	int				i;
+
+	t_tmp = env->pieces;
+	while (t_tmp->next)
+	{
+		i = 0;
+		while(i < 4){
+			ft_putchar('(');
+			ft_putnbr(t_tmp->coords[i]->x);
+			ft_putchar('-');
+			ft_putnbr(t_tmp->coords[i]->y);
+			ft_putstr('),');
+		}
+		ft_putchar('\n');
+	}
 }
