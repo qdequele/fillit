@@ -18,6 +18,7 @@ int		main(int ac, char **av)
 	t_env	*env;
 
 	env = (t_env *)malloc(sizeof(t_env));
+	env->pieces = NULL;
 	if (ac >= 2)
 	{
 		if (!ft_read_params(env, av))
