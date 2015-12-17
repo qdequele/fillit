@@ -24,16 +24,17 @@ int		ft_parser(t_env *env)
 	{
 		env->y = 0;
 		i = 0;
-		while (env->str[env->x + env->y] != '\0' && env->y < 20)
+		while (env->str[env->x + env->y] != '\0' && env->y < 20 && i < 4)
 		{
 			if (env->str[env->x + env->y] == '#'){
 				if (i == 0)
 					first[0] = *ft_new_coord(env->y / 5, env->y % 5);
-				coords[i] = *ft_new_coord((first[0].x) - (env->y / 5), (first[0].y) - (env->y % 5));
+				coords[i] = *ft_new_coord((env->y / 5) - (first[0].x), (env->y % 5) - (first[0].y));
 				i++;
 			}
 			env->y++;
 		}
+		ft_push_tetrimino(env, coords);
 		env->x += 21;
 	}
 	return (1);
