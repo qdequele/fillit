@@ -12,7 +12,8 @@
 
 #Define the program
 NAME			= fillit
-_SRC			= ft_fillit.c ft_compute.c ft_checker.c ft_read_params.c ft_tetrimino.c ft_coords.c
+_SRC			= ft_fillit.c ft_compute.c ft_checker.c ft_read_params.c \
+						ft_tetrimino.c ft_coords.c ft_parser.c
 SRC				= $(addprefix srcs/,$(_SRC))
 INCLUDE   = includes
 VPATH			= SRC INCLUDE
@@ -24,7 +25,7 @@ $(NAME):
 	@mkdir bin
 	@make -C libft
 	@gcc $(CFLAGS) $(SRC) -Llibft -lft -Iincludes -Ilibft -o $(NAME)
-	@echo $(NAME)" compilled"
+	@echo $(NAME)" compiled"
 
 clean:
 	@make clean -C libft

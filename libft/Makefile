@@ -39,7 +39,7 @@ $(NAME):
 	@gcc -c $(CFLAGS) $(SRC)
 	@ar rc $(NAME) $(O_FILES)
 	@ranlib $(NAME)
-	@echo "Library FT compiled"
+	@echo "libft.a compiled"
 
 clean:
 	@rm -rf $(O_FILES)
