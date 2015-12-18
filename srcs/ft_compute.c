@@ -37,10 +37,11 @@ int		ft_compute(t_env *env, t_tetriminos *current_tetrimino){
 	if (ft_can_place(env, current_tetrimino))
 	{	
 		while (i < 4)
-			{
-				env->map[Y][X] = current_tetrimino->letter;
-			}
-		current_tetrimino = current_tetrimino->next
+		{
+			env->map[Y][X] = current_tetrimino->letter;
+			i++;
+		}
+		current_tetrimino = current_tetrimino->next;
 	}
 	else
 	{

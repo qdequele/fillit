@@ -71,7 +71,6 @@ int		ft_push_tetrimino(t_env *env, t_coord *coords)
 		while (t_tmp->next)
 		{
 			t_tmp = t_tmp->next;
-			ft_putchar('-');
 		}
 		t_tmp->next = t_new;
 	}
