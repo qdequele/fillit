@@ -6,7 +6,7 @@
 /*   By: bjamin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 11:04:03 by bjamin            #+#    #+#             */
-/*   Updated: 2015/12/10 12:45:47 by bjamin           ###   ########.fr       */
+/*   Updated: 2015/12/30 17:19:23 by bjamin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,6 @@ void				ft_swap(int *a, int *b);
 int					ft_get_min(int a, int b);
 int					ft_get_min_three(int a, int b, int c);
 void				ft_show_tab(int *tab, int size);
-int         ft_sqrt(int nb);
+int					ft_sqrt(int nb);
 
 #endif

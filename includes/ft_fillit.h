@@ -6,36 +6,40 @@
 /*   By: qdequele <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/15 16:02:51 by qdequele          #+#    #+#             */
-/*   Updated: 2015/12/16 10:29:22 by qdequele         ###   ########.fr       */
+/*   Updated: 2015/12/30 17:18:34 by bjamin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef		FT_FILLIT_H
-# define	FT_FILLIT_H
+#ifndef FT_FILLIT_H
+# define FT_FILLIT_H
 # define BUF_SIZE 5000
-#include <string.h>
-#include <stdlib.h>
 
-typedef struct		s_coord {
+# include <string.h>
+# include <stdlib.h>
+
+typedef struct		s_coord
+{
 	int				x;
 	int				y;
 }					t_coord;
 
-typedef struct		s_tetri {
+typedef struct		s_tetri
+{
 	t_coord			coords[4];
 	struct s_tetri	*next;
-	char        	letter;
+	char			letter;
 }					t_tetriminos;
 
-typedef struct		s_env {
-	char 			*str;
+typedef struct		s_env
+{
+	char			*str;
 	int				x;
 	int				y;
 	int				height;
 	int				width;
 	int				pieces_count;
 	t_tetriminos	*pieces;
-	char          	**map;
+	char			**map;
 }					t_env;
 
 int					ft_read_params(t_env *env, char **av);
@@ -45,6 +49,6 @@ int					ft_parser(t_env *env);
 int					ft_push_tetrimino(t_env *env, t_coord *coords);
 void				ft_show_tetrimino(t_env *env);
 t_coord				*ft_new_coord(int x, int y);
-int         		ft_compute(t_env *env, t_tetriminos *current_tetrimino);
+int					ft_compute(t_env *env, t_tetriminos *current_tetrimino);
 
 #endif

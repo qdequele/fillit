@@ -6,14 +6,13 @@
 /*   By: qdequele <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/15 15:55:35 by qdequele          #+#    #+#             */
-/*   Updated: 2015/12/15 17:05:12 by qdequele         ###   ########.fr       */
+/*   Updated: 2015/12/30 17:11:30 by bjamin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 #include <stdlib.h>
 #include "ft_fillit.h"
-
 
 int		ft_check_char(char *str, int x, int y)
 {
@@ -42,8 +41,9 @@ int		ft_check_tetriminos(t_env *env)
 			if (env->str[env->x + env->y++] == '\n')
 				env->height++;
 		}
-		if (env->height != 4 || env->width != 4 || (env->str[env->x + env->y] != '\n'
-					&& env->str[env->x + env->y] != '\0'))
+		if (env->height != 4 || env->width != 4
+			|| (env->str[env->x + env->y] != '\n'
+			&& env->str[env->x + env->y] != '\0'))
 			return (0);
 		env->x += 21;
 	}
@@ -86,7 +86,8 @@ void	ft_show_tetrimino(t_env *env)
 	while (t_tmp->next)
 	{
 		i = 0;
-		while(i < 4){
+		while (i < 4)
+		{
 			ft_putchar('(');
 			ft_putnbr(t_tmp->coords[i].x);
 			ft_putstr(" ; ");

@@ -6,7 +6,7 @@
 /*   By: qdequele <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/15 16:02:51 by qdequele          #+#    #+#             */
-/*   Updated: 2015/12/16 10:29:22 by qdequele         ###   ########.fr       */
+/*   Updated: 2015/12/30 17:10:02 by bjamin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 #include <unistd.h>
 #include "ft_fillit.h"
 
-int    ft_read_params(t_env *env, char **av)
+int		ft_read_params(t_env *env, char **av)
 {
 	int		fd;
 	int		ret;
 	char	buf[BUF_SIZE + 1];
-	char 	*complete_buf;
+	char	*complete_buf;
 
 	complete_buf = (char *)malloc(sizeof(char));
 	fd = open(av[1], O_RDWR, S_IRUSR | S_IWUSR);
