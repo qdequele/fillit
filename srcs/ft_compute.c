@@ -63,11 +63,7 @@ int		ft_place(t_env *env)
 	return (1);
 }
 
-<<<<<<< HEAD
 int	ft_update_tetrimino(t_env *env)
-=======
-t_tetriminos	*ft_get_tetriminos(t_env *env)
->>>>>>> e5f7e8c864c46b3efc74a93a1fa4b1a812b7697f
 {
 	t_tetriminos	*t_tmp;
 	int				i;
