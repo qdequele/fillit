@@ -6,7 +6,7 @@
 /*   By: bjamin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/15 16:00:29 by bjamin            #+#    #+#             */
-/*   Updated: 2016/01/05 15:33:16 by bjamin           ###   ########.fr       */
+/*   Updated: 2016/01/05 15:46:40 by bjamin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		main(int ac, char **av)
 	env->pieces_count = 0;
 	env->pieces = NULL;
 	env->current_index = 0;
-	ft_update_tetrimino(&env);
+	ft_update_tetrimino(env);
 	if (ac >= 2)
 	{
 		if (!ft_read_params(env, av))
@@ -31,7 +31,7 @@ int		main(int ac, char **av)
 		if (!ft_parser(env))
 			return (0);
 		ft_show_tetrimino(env);
-		if (!ft_compute(env, env->pieces))
+		if (!ft_compute(env))
 			return (0);
 		ft_putstr("ok\n");
 	}
