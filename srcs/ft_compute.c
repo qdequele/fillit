@@ -6,7 +6,7 @@
 /*   By: bjamin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/15 16:01:45 by bjamin            #+#    #+#             */
-/*   Updated: 2016/01/05 15:34:52 by bjamin           ###   ########.fr       */
+/*   Updated: 2016/01/05 15:42:06 by bjamin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,21 +63,20 @@ int		ft_place(t_env *env)
 	return (1);
 }
 
-<<<<<<< HEAD
-int	ft_update_tetrimino(t_env *env)
-=======
-t_tetriminos	*ft_get_tetriminos(t_env *env)
->>>>>>> e5f7e8c864c46b3efc74a93a1fa4b1a812b7697f
+int		ft_update_tetrimino(t_env *env)
 {
 	t_tetriminos	*t_tmp;
 	int				i;
 
-	t_tmp = t_env->pieces;
+	t_tmp = env->pieces;
 	i = 0;
 	while (i <= env->current_index)
 	{
 		if (!t_tmp->next)
-			return (NULL);
+		{
+			env->current_tetrimino = NULL;
+			return (0);
+		}
 		t_tmp = t_tmp->next;
 	}
 	env->current_tetrimino = t_tmp;
