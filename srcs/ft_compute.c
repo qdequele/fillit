@@ -77,7 +77,6 @@ t_tetriminos *ft_get_tetriminos(t_env *env, int current)
 		t_tmp = t_tmp->next;
 	}
 	return (t_tmp);
-
 }
 
 int		ft_compute(t_env *env, t_tetriminos *current_tetrimino)
