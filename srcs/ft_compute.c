@@ -41,8 +41,8 @@ int		ft_remove(t_env *env)
 	{
 		while (env->x)
 		{
-			if (env->map[Y][X] >= 'A' + env->current_index)
-				env->map[Y][X] = '.';
+			if (env->map[env->y][env->x] >= 'A' + env->current_index)
+				env->map[env->y][env->x] = '.';
 			env->x++;
 		}
 		env->y++;
