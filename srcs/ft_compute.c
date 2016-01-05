@@ -30,6 +30,21 @@ int		ft_can_place(t_env *env, t_tetriminos *current_tetrimino)
 		}
 	return (can_place);
 }
+int		ft_remove(t_env *env, int current)
+{
+	env->x = 0;
+	env->y = 0;
+	while (env->y)
+	{
+		while (env->x)
+		{
+			if (env->map[Y][X] >= 'A' + current)
+				env->map[Y][X] = '.';
+			env->x++;
+		}
+		env->y++
+	}
+}
 
 int		ft_compute(t_env *env, t_tetriminos *current_tetrimino)
 {
