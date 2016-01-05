@@ -6,7 +6,7 @@
 /*   By: bjamin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/15 16:01:45 by bjamin            #+#    #+#             */
-/*   Updated: 2016/01/05 15:01:26 by bjamin           ###   ########.fr       */
+/*   Updated: 2016/01/05 15:09:49 by bjamin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int		ft_can_place(t_env *env, t_tetriminos *current_tetrimino)
 	}
 	return (can_place);
 }
+
 int		ft_remove(t_env *env, int current)
 {
 	env->x = 0;
@@ -44,8 +45,9 @@ int		ft_remove(t_env *env, int current)
 				env->map[Y][X] = '.';
 			env->x++;
 		}
-		env->y++
+		env->y++;
 	}
+	return (1);
 }
 
 int		ft_place(t_env *env, t_tetriminos *current_tetrimino)
