@@ -6,7 +6,7 @@
 /*   By: bjamin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/15 16:01:45 by bjamin            #+#    #+#             */
-/*   Updated: 2015/12/30 17:05:21 by bjamin           ###   ########.fr       */
+/*   Updated: 2016/01/05 15:01:26 by bjamin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,13 @@ int		ft_can_place(t_env *env, t_tetriminos *current_tetrimino)
 	i = 0;
 	can_place = 1;
 	if (env->map[Y][X] == '.')
+	{
 		while (i < 4)
 		{
 			if (env->map[Y][X] != '.')
 				can_place = 0;
 		}
+	}
 	return (can_place);
 }
 int		ft_remove(t_env *env, int current)
@@ -46,6 +48,18 @@ int		ft_remove(t_env *env, int current)
 	}
 }
 
+int		ft_place(t_env *env, t_tetriminos *current_tetrimino)
+{
+	int i;
+
+	i = 0;
+	while (i < 4)
+	{
+		env->map[Y][X] = current_tetrimino->letter;
+		i++;
+	}
+	return (1);
+}
 int		ft_compute(t_env *env, t_tetriminos *current_tetrimino)
 {
 	int		i;
@@ -53,11 +67,7 @@ int		ft_compute(t_env *env, t_tetriminos *current_tetrimino)
 	i = 0;
 	if (ft_can_place(env, current_tetrimino))
 	{
-		while (i < 4)
-		{
-			env->map[Y][X] = current_tetrimino->letter;
-			i++;
-		}
+		ft_place(env, current_tetrimino);
 		current_tetrimino = current_tetrimino->next;
 	}
 	else
