@@ -6,7 +6,7 @@
 /*   By: qdequele <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/15 16:02:51 by qdequele          #+#    #+#             */
-/*   Updated: 2015/12/30 17:18:34 by bjamin           ###   ########.fr       */
+/*   Updated: 2016/01/05 15:31:45 by bjamin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@ typedef struct		s_env
 	int				height;
 	int				width;
 	int				pieces_count;
-	int				current;
+	int				current_index;
+	t_tetriminos	*current_tetrimino;
 	t_tetriminos	*pieces;
 	char			**map;
 }					t_env;
@@ -50,8 +51,9 @@ int					ft_parser(t_env *env);
 int					ft_push_tetrimino(t_env *env, t_coord *coords);
 void				ft_show_tetrimino(t_env *env);
 t_coord				*ft_new_coord(int x, int y);
-int					ft_compute(t_env *env, t_tetriminos *current_tetrimino);
+int					ft_compute(t_env *env);
 int					ft_update_tetrimino(t_env *env);
-int					ft_place(t_env *env, t_tetriminos *current_tetrimino);
+int					ft_place(t_env *env);
+
 int					ft_remove(t_env *env);
 #endif
