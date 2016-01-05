@@ -54,6 +54,5 @@ t_coord				*ft_new_coord(int x, int y);
 int					ft_compute(t_env *env);
 int					ft_update_tetrimino(t_env *env);
 int					ft_place(t_env *env);
-
 int					ft_remove(t_env *env);
 #endif
