@@ -6,7 +6,7 @@
 /*   By: bjamin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/15 16:01:45 by bjamin            #+#    #+#             */
-/*   Updated: 2016/01/05 15:44:08 by bjamin           ###   ########.fr       */
+/*   Updated: 2016/01/05 15:44:42 by bjamin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #define X env->x + env->current_tetrimino->coords[i].x
 #define Y env->y + env->current_tetrimino->coords[i].y
 
-int		ft_can_place(t_env *env, t_tetriminos *current_tetrimino)
+int		ft_can_place(t_env *env)
 {
 	int		i;
 	int		can_place;
