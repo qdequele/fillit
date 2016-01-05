@@ -38,6 +38,7 @@ typedef struct		s_env
 	int				height;
 	int				width;
 	int				pieces_count;
+	int				current;
 	t_tetriminos	*pieces;
 	char			**map;
 }					t_env;
@@ -50,7 +51,7 @@ int					ft_push_tetrimino(t_env *env, t_coord *coords);
 void				ft_show_tetrimino(t_env *env);
 t_coord				*ft_new_coord(int x, int y);
 int					ft_compute(t_env *env, t_tetriminos *current_tetrimino);
-t_tetriminos 		*ft_get_tetriminos(t_env *env, int current);
+t_tetriminos 		*ft_get_tetriminos(t_env *env);
 int					ft_place(t_env *env, t_tetriminos *current_tetrimino);
-int					ft_remove(t_env *env, int current);
+int					ft_remove(t_env *env);
 #endif

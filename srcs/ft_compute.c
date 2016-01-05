@@ -33,7 +33,7 @@ int		ft_can_place(t_env *env, t_tetriminos *current_tetrimino)
 	return (can_place);
 }
 
-int		ft_remove(t_env *env, int current)
+int		ft_remove(t_env *env)
 {
 	env->x = 0;
 	env->y = 0;
@@ -41,7 +41,7 @@ int		ft_remove(t_env *env, int current)
 	{
 		while (env->x)
 		{
-			if (env->map[Y][X] >= 'A' + current)
+			if (env->map[Y][X] >= 'A' + env.current)
 				env->map[Y][X] = '.';
 			env->x++;
 		}
@@ -63,14 +63,14 @@ int		ft_place(t_env *env, t_tetriminos *current_tetrimino)
 	return (1);
 }
 
-t_tetriminos *ft_get_tetriminos(t_env *env, int current)
+t_tetriminos *ft_get_tetriminos(t_env *env)
 {
 	t_tetriminos	*t_tmp;
 	int				i;
 
 	t_tmp = t_env->pieces;
 	i = 0;
-	while (i <= current)
+	while (i <= env.current)
 	{
 		if (!t_tmp->next)
 			return (NULL);
