@@ -12,5 +12,5 @@ int ft_sqrt(int nb)
 	if ((nb % i) == 0)
 		return (i);
 	else
-		return(0);
+		return(i + 1);
 }

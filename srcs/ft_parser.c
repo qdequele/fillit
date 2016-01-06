@@ -32,7 +32,9 @@ int		ft_generate_map(t_env *env)
 	int i;
 
 	i = 0;
+	ft_putnbr((env->pieces_count + env->offset) * 4);
 	env->map_size = ft_sqrt((env->pieces_count + env->offset) * 4);
+	//ft_debug("ft_generate_map", env);
 	env->map = (char **)malloc(sizeof(char *) * env->map_size);
 	if (!env->map)
 		return (0);
@@ -54,6 +56,7 @@ int		ft_parser(t_env *env)
 	int				i;
 
 	env->x = 0;
+	//ft_debug("ft_parser", env);
 	while (env->str[env->x])
 	{
 		env->y = 0;
@@ -73,5 +76,5 @@ int		ft_parser(t_env *env)
 		ft_push_tetrimino(env, coords);
 		env->x += 21;
 	}
-	return (ft_generate_map(env));
+	return (1);
 }

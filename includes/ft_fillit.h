@@ -59,4 +59,5 @@ int					ft_place(t_env *env);
 int					ft_remove(t_env *env);
 void				ft_next(t_env *env);
 int					ft_generate_map(t_env *env);
+void				ft_debug(char *str, t_env *env);
 #endif

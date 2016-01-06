@@ -21,8 +21,10 @@ int		main(int ac, char **av)
 	env->pieces_count = 0;
 	env->pieces = NULL;
 	env->current_index = 0;
+	env->map_size = 0;
 	env->offset = 0;
-	ft_update_tetrimino(env);
+	env->x = 0;
+	env->y = 0;
 	if (ac >= 2)
 	{
 		if (!ft_read_params(env, av))
@@ -31,8 +33,15 @@ int		main(int ac, char **av)
 			return (0);
 		if (!ft_parser(env))
 			return (0);
-		while (ft_generate_map(env) && !ft_compute(env))
+		env->x = 0;
+		env->y = 0;
+		ft_generate_map(env);
+		while (!ft_compute(env))
+		{
 			env->offset++;
+			//free map
+			ft_generate_map(env);
+		}
 		//affiche map
 		ft_putstr("ok\n");
 	}
