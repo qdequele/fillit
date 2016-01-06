@@ -17,7 +17,7 @@
 
 void	ft_debug(char *str, t_env *env)
 {
-	ft_putstr("\n\n######################\n\n");
+	ft_putstr("######################\n\n");
 	ft_putstr(str);
 	ft_putstr("\nenv->x : ");
 	ft_putnbr(env->x);
@@ -50,16 +50,15 @@ int		ft_can_place(t_env *env)
 	{
 		while (i < 4)
 		{
-			if (X < env->map_size && Y < env->map_size)
+			if (((X < env->map_size - 1) && (Y < env->map_size - 1)) && env->map[Y][X] != '.')
 			{
-				if (env->map[Y][X] != '.')
-				{
-					can_place = 0;
-				}
+				can_place = 0;
 			}
 			i++;
 		}
 	}
+	else
+		can_place = 0;
 	return (can_place);
 }
 
@@ -68,10 +67,10 @@ int		ft_remove(t_env *env)
 	int		x;
 	int		y;
 
-	x = 0;
 	y = 0;
 	while (y)
 	{
+		x = 0;
 		while (x)
 		{
 			if (env->map[y][x] >= 'A' + env->current_index)
@@ -80,6 +79,8 @@ int		ft_remove(t_env *env)
 		}
 		y++;
 	}
+	env->current_index--;
+	ft_update_tetrimino(env);
 	return (1);
 }
 
@@ -88,11 +89,17 @@ int		ft_place(t_env *env)
 	int i;
 
 	i = 0;
+	if (env->current_tetrimino->letter == 'K')
+	{
+		ft_putstr("\n\nWARNING\n\n");
+	}
 	while (i < 4)
 	{
 		env->map[Y][X] = env->current_tetrimino->letter;
 		i++;
 	}
+	env->current_index++;
+	ft_update_tetrimino(env);
 	return (1);
 }
 
@@ -104,7 +111,7 @@ int		ft_update_tetrimino(t_env *env)
 	t_tmp = env->pieces;
 	i = 0;
 	//ft_debug("ft_update_tetrimino", env);
-	while (i <= env->current_index && i < env->pieces_count)
+	while (i < env->current_index && i <= env->pieces_count)
 	{
 		if (!t_tmp->next)
 		{
@@ -121,7 +128,7 @@ int		ft_update_tetrimino(t_env *env)
 void	ft_next(t_env *env)
 {
 	//ft_debug("ft_next", env);
-	if (env->x < 4)
+	if (env->x < (env->map_size - 1))
 		env->x++;
 	else
 	{
@@ -135,8 +142,6 @@ int		ft_compute(t_env *env)
 	int		i;
 
 	i = 0;
-	ft_update_tetrimino(env);
-	ft_debug("ft_compute", env);
 	if (!ft_can_place(env))
 	{
 		if (env->y > env->map_size)
@@ -144,16 +149,16 @@ int		ft_compute(t_env *env)
 			if (env->current_index == 0)
 				return (0);
 			ft_remove(env);
-			env->current_index--;
 		}
 	}
 	else
 	{
 		ft_place(env);
-		if (env->current_index == env->pieces_count)
+		if (env->current_index == env->pieces_count + 1)
 			return (1);
-		env->current_index++;
 	}
 	ft_next(env);
+	ft_debug("ft_compute", env);
+	ft_show_map(env);
 	return (ft_compute(env));
 }

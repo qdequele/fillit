@@ -1,0 +1,949 @@
+40######################
+
+ft_compute
+env->x : 1
+env->y : 0
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 1
+env->offset : 0
+env->map_size : 8
+--- END ---
+AA......
+.A......
+.A......
+........
+........
+........
+........
+........
+
+######################
+
+ft_compute
+env->x : 2
+env->y : 0
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 1
+env->offset : 0
+env->map_size : 8
+--- END ---
+AA......
+.A......
+.A......
+........
+........
+........
+........
+........
+
+######################
+
+ft_compute
+env->x : 3
+env->y : 0
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 2
+env->offset : 0
+env->map_size : 8
+--- END ---
+AAB.....
+.ABB....
+.A.B....
+........
+........
+........
+........
+........
+
+######################
+
+ft_compute
+env->x : 4
+env->y : 0
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 3
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCC...
+.ABBC...
+.A.BC...
+........
+........
+........
+........
+........
+
+######################
+
+ft_compute
+env->x : 5
+env->y : 0
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 3
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCC...
+.ABBC...
+.A.BC...
+........
+........
+........
+........
+........
+
+######################
+
+ft_compute
+env->x : 6
+env->y : 0
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 4
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCCDDD
+.ABBC.D.
+.A.BC...
+........
+........
+........
+........
+........
+
+######################
+
+ft_compute
+env->x : 7
+env->y : 0
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 4
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCCDDD
+.ABBC.D.
+.A.BC...
+........
+........
+........
+........
+........
+
+######################
+
+ft_compute
+env->x : 0
+env->y : 1
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 4
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCCDDD
+.ABBC.D.
+.A.BC...
+........
+........
+........
+........
+........
+
+######################
+
+ft_compute
+env->x : 1
+env->y : 1
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 4
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCCDDD
+.ABBC.D.
+.A.BC...
+........
+........
+........
+........
+........
+
+######################
+
+ft_compute
+env->x : 2
+env->y : 1
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 4
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCCDDD
+.ABBC.D.
+.A.BC...
+........
+........
+........
+........
+........
+
+######################
+
+ft_compute
+env->x : 3
+env->y : 1
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 4
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCCDDD
+.ABBC.D.
+.A.BC...
+........
+........
+........
+........
+........
+
+######################
+
+ft_compute
+env->x : 4
+env->y : 1
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 4
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCCDDD
+.ABBC.D.
+.A.BC...
+........
+........
+........
+........
+........
+
+######################
+
+ft_compute
+env->x : 5
+env->y : 1
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 4
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCCDDD
+.ABBC.D.
+.A.BC...
+........
+........
+........
+........
+........
+
+######################
+
+ft_compute
+env->x : 6
+env->y : 1
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 4
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCCDDD
+.ABBC.D.
+.A.BC...
+........
+........
+........
+........
+........
+
+######################
+
+ft_compute
+env->x : 7
+env->y : 1
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 4
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCCDDD
+.ABBC.D.
+.A.BC...
+........
+........
+........
+........
+........
+
+######################
+
+ft_compute
+env->x : 0
+env->y : 2
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 4
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCCDDD
+.ABBC.D.
+.A.BC...
+........
+........
+........
+........
+........
+
+######################
+
+ft_compute
+env->x : 1
+env->y : 2
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 4
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCCDDD
+.ABBC.D.
+.A.BC...
+........
+........
+........
+........
+........
+
+######################
+
+ft_compute
+env->x : 2
+env->y : 2
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 4
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCCDDD
+.ABBC.D.
+.A.BC...
+........
+........
+........
+........
+........
+
+######################
+
+ft_compute
+env->x : 3
+env->y : 2
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 4
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCCDDD
+.ABBC.D.
+.A.BC...
+........
+........
+........
+........
+........
+
+######################
+
+ft_compute
+env->x : 4
+env->y : 2
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 4
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCCDDD
+.ABBC.D.
+.A.BC...
+........
+........
+........
+........
+........
+
+######################
+
+ft_compute
+env->x : 5
+env->y : 2
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 4
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCCDDD
+.ABBC.D.
+.A.BC...
+........
+........
+........
+........
+........
+
+
+
+WARNING
+
+######################
+
+ft_compute
+env->x : 6
+env->y : 2
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 5
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCCDDD
+.ABBC.D.
+.A.BCEEE
+.......E
+........
+........
+........
+........
+
+######################
+
+ft_compute
+env->x : 7
+env->y : 2
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 5
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCCDDD
+.ABBC.D.
+.A.BCEEE
+.......E
+........
+........
+........
+........
+
+######################
+
+ft_compute
+env->x : 0
+env->y : 3
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 5
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCCDDD
+.ABBC.D.
+.A.BCEEE
+.......E
+........
+........
+........
+........
+
+######################
+
+ft_compute
+env->x : 1
+env->y : 3
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 6
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCCDDD
+.ABBC.D.
+.A.BCEEE
+FFF....E
+..F.....
+........
+........
+........
+
+######################
+
+ft_compute
+env->x : 2
+env->y : 3
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 6
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCCDDD
+.ABBC.D.
+.A.BCEEE
+FFF....E
+..F.....
+........
+........
+........
+
+######################
+
+ft_compute
+env->x : 3
+env->y : 3
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 6
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCCDDD
+.ABBC.D.
+.A.BCEEE
+FFF....E
+..F.....
+........
+........
+........
+
+######################
+
+ft_compute
+env->x : 4
+env->y : 3
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 6
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCCDDD
+.ABBC.D.
+.A.BCEEE
+FFF....E
+..F.....
+........
+........
+........
+
+######################
+
+ft_compute
+env->x : 5
+env->y : 3
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 7
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCCDDD
+.ABBC.D.
+.A.BCEEE
+FFF.G..E
+..FGG...
+...G....
+........
+........
+
+######################
+
+ft_compute
+env->x : 6
+env->y : 3
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 8
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCCDDD
+.ABBC.D.
+.A.BCEEE
+FFF.GH.E
+..FGGHH.
+...G.H..
+........
+........
+
+######################
+
+ft_compute
+env->x : 7
+env->y : 3
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 8
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCCDDD
+.ABBC.D.
+.A.BCEEE
+FFF.GH.E
+..FGGHH.
+...G.H..
+........
+........
+
+######################
+
+ft_compute
+env->x : 0
+env->y : 4
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 8
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCCDDD
+.ABBC.D.
+.A.BCEEE
+FFF.GH.E
+..FGGHH.
+...G.H..
+........
+........
+
+######################
+
+ft_compute
+env->x : 1
+env->y : 4
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 9
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCCDDD
+.ABBC.D.
+.A.BCEEE
+FFF.GH.E
+I.FGGHH.
+II.G.H..
+I.......
+........
+
+######################
+
+ft_compute
+env->x : 2
+env->y : 4
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 9
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCCDDD
+.ABBC.D.
+.A.BCEEE
+FFF.GH.E
+I.FGGHH.
+II.G.H..
+I.......
+........
+
+######################
+
+ft_compute
+env->x : 3
+env->y : 4
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 9
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCCDDD
+.ABBC.D.
+.A.BCEEE
+FFF.GH.E
+I.FGGHH.
+II.G.H..
+I.......
+........
+
+######################
+
+ft_compute
+env->x : 4
+env->y : 4
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 9
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCCDDD
+.ABBC.D.
+.A.BCEEE
+FFF.GH.E
+I.FGGHH.
+II.G.H..
+I.......
+........
+
+######################
+
+ft_compute
+env->x : 5
+env->y : 4
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 9
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCCDDD
+.ABBC.D.
+.A.BCEEE
+FFF.GH.E
+I.FGGHH.
+II.G.H..
+I.......
+........
+
+######################
+
+ft_compute
+env->x : 6
+env->y : 4
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 9
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCCDDD
+.ABBC.D.
+.A.BCEEE
+FFF.GH.E
+I.FGGHH.
+II.G.H..
+I.......
+........
+
+######################
+
+ft_compute
+env->x : 7
+env->y : 4
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 9
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCCDDD
+.ABBC.D.
+.A.BCEEE
+FFF.GH.E
+I.FGGHH.
+II.G.H..
+I.......
+........
+
+######################
+
+ft_compute
+env->x : 0
+env->y : 5
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 9
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCCDDD
+.ABBC.D.
+.A.BCEEE
+FFF.GH.E
+I.FGGHH.
+II.G.H..
+I.......
+........
+
+######################
+
+ft_compute
+env->x : 1
+env->y : 5
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 9
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCCDDD
+.ABBC.D.
+.A.BCEEE
+FFF.GH.E
+I.FGGHH.
+II.G.H..
+I.......
+........
+
+######################
+
+ft_compute
+env->x : 2
+env->y : 5
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 9
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCCDDD
+.ABBC.D.
+.A.BCEEE
+FFF.GH.E
+I.FGGHH.
+II.G.H..
+I.......
+........
+
+######################
+
+ft_compute
+env->x : 3
+env->y : 5
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 9
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCCDDD
+.ABBC.D.
+.A.BCEEE
+FFF.GH.E
+I.FGGHH.
+II.G.H..
+I.......
+........
+
+######################
+
+ft_compute
+env->x : 4
+env->y : 5
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 9
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCCDDD
+.ABBC.D.
+.A.BCEEE
+FFF.GH.E
+I.FGGHH.
+II.G.H..
+I.......
+........
+
+######################
+
+ft_compute
+env->x : 5
+env->y : 5
+env->height : 4
+env->width : 4
+env->pieces_count : 10
+env->current_index : 10
+env->offset : 0
+env->map_size : 8
+--- END ---
+AABCCDDD
+.ABBC.D.
+.A.BCEEE
+FFF.GH.E
+I.FGGHH.
+II.GJH..
+I.JJJ...
+........
+
