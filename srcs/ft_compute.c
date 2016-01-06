@@ -41,25 +41,22 @@ void	ft_debug(char *str, t_env *env)
 int		ft_can_place(t_env *env)
 {
 	int		i;
-	int		can_place;
 
 	i = 0;
-	can_place = 1;
+
 	if (env->map[Y][X] == '.')
 	{
 		while (i < 4)
 		{
 			if ((X > env->map_size - 1) || (Y > env->map_size - 1) ||
 					env->map[Y][X] != '.')
-			{
-				can_place = 0;
-			}
+				return (0);
 			i++;
 		}
 	}
 	else
-		can_place = 0;
-	return (can_place);
+		return (0);
+	return (1);
 }
 
 int		ft_remove(t_env *env)
@@ -67,6 +64,7 @@ int		ft_remove(t_env *env)
 	int		x;
 	int		y;
 
+	//ft_debug("ft_remove", env);
 	y = 0;
 	while (y)
 	{
