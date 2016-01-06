@@ -43,7 +43,6 @@ int		main(int ac, char **av)
 			ft_generate_map(env);
 		}
 		ft_show_map(env);
-		ft_putstr("ok\n");
 	}
 	return (1);
 }
