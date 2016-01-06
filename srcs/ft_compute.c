@@ -45,7 +45,6 @@ int		ft_can_place(t_env *env)
 
 	i = 0;
 	can_place = 1;
-	//ft_debug("ft_can_place", env);
 	if (env->map[Y][X] == '.')
 	{
 		while (i < 4)
@@ -59,6 +58,14 @@ int		ft_can_place(t_env *env)
 	}
 	else
 		can_place = 0;
+
+	if (can_place && env->current_tetrimino->letter == 'K')
+	{
+		ft_putstr("\n\nWARNING\n\n");
+		ft_debug("ft_can_place", env);
+		ft_show_map(env);
+	}
+
 	return (can_place);
 }
 
@@ -89,10 +96,6 @@ int		ft_place(t_env *env)
 	int i;
 
 	i = 0;
-	if (env->current_tetrimino->letter == 'K')
-	{
-		ft_putstr("\n\nWARNING\n\n");
-	}
 	while (i < 4)
 	{
 		env->map[Y][X] = env->current_tetrimino->letter;
