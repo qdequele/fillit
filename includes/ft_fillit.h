@@ -6,7 +6,7 @@
 /*   By: quentindequelen <quentindequelen@student.42.fr>+#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/15 16:02:51 by qdequele          #+#    #+#             */
-/*   Updated: 2016/01/06 18:10:28 by quentindequelen  ###   ########.fr       */
+/*   Updated: 2016/01/06 23:54:11 by quentindequelen  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,20 +48,27 @@ typedef struct		s_env
 }					t_env;
 
 int					ft_read_params(t_env *env, char **av);
-int					ft_check_tetriminos(t_env *env);
+
 int					ft_check_char(char *str, int x, int y);
-int					ft_parser(t_env *env);
+int					ft_check_tetriminos(t_env *env);
 int					ft_push_tetrimino(t_env *env, t_coord *coords);
-void				ft_show_tetrimino(t_env *env);
-t_coord				*ft_new_coord(int x, int y);
-int					ft_compute(t_env *env);
+
+int					ft_remember(t_env *env);
 int					ft_update_tetrimino(t_env *env);
 int					ft_place(t_env *env);
 int					ft_remove(t_env *env);
+
+t_coord				*ft_new_coord(int x, int y);
+
+int					ft_can_place(t_env *env);
+int					ft_compute(t_env *env);
 void				ft_next(t_env *env);
-int					ft_generate_map(t_env *env);
+
 void				ft_debug(char *str, t_env *env);
 int					ft_show_map(t_env *env);
-int					ft_remember(t_env *env);
+void				ft_show_tetrimino(t_env *env);
 
+int					ft_parser(t_env *env);
+int					ft_fill_chars(char *str, int size);
+int					ft_generate_map(t_env *env);
 #endif

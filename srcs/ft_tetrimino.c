@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tetrimino.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qdequele <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: quentindequelen <quentindequelen@student.42.fr>+#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/15 15:55:35 by qdequele          #+#    #+#             */
-/*   Updated: 2015/12/30 17:11:30 by bjamin           ###   ########.fr       */
+/*   Updated: 2016/01/06 23:42:07 by quentindequelen  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,27 +75,4 @@ int		ft_push_tetrimino(t_env *env, t_coord *coords)
 		t_tmp->next = t_new;
 	}
 	return (1);
-}
-
-void	ft_show_tetrimino(t_env *env)
-{
-	t_tetriminos	*t_tmp;
-	int				i;
-
-	t_tmp = env->pieces;
-	while (t_tmp->next)
-	{
-		i = 0;
-		while (i < 4)
-		{
-			ft_putchar('(');
-			ft_putnbr(t_tmp->coords[i].x);
-			ft_putstr(" ; ");
-			ft_putnbr(t_tmp->coords[i].y);
-			ft_putstr(") \n");
-			i++;
-		}
-		t_tmp = t_tmp->next;
-		ft_putchar('\n');
-	}
 }

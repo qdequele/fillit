@@ -12,7 +12,7 @@
 
 #Define the program
 NAME			= fillit
-_SRC			= ft_fillit.c ft_compute.c ft_read_params.c \
+_SRC			= ft_fillit.c ft_compute.c ft_read_params.c ft_actions.c \
 						ft_tetrimino.c ft_coords.c ft_parser.c ft_show.c
 SRC				= $(addprefix srcs/,$(_SRC))
 INCLUDE   = includes
