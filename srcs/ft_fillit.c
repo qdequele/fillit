@@ -16,13 +16,12 @@
 int		main(int ac, char **av)
 {
 	t_env	*env;
-	int		offset;
 
 	env = (t_env *)malloc(sizeof(t_env));
 	env->pieces_count = 0;
 	env->pieces = NULL;
 	env->current_index = 0;
-	offset = -1;
+	env->offset = 0;
 	ft_update_tetrimino(env);
 	if (ac >= 2)
 	{
@@ -32,7 +31,8 @@ int		main(int ac, char **av)
 			return (0);
 		if (!ft_parser(env))
 			return (0);
-		while (ft_generate_map(env, ++offset) && !ft_compute(env));
+		while (ft_generate_map(env) && !ft_compute(env))
+			env->offset++;
 		//affiche map
 		ft_putstr("ok\n");
 	}

@@ -101,18 +101,21 @@ int		ft_compute(t_env *env)
 	i = 0;
 	if (!ft_can_place(env) && env->y > ft_sqrt(env->pieces_count * 4))
 	{
+		if (env->current_index == 0)
+			return (0);
 		ft_remove(env);
-		ft_next(t_env *env)
+		ft_next(env);
 		env->current_index--;
 	}
 	else if (!ft_can_place(env))
-		ft_next(t_env *env)
+		ft_next(env);
 	else
 	{
 		ft_place(env);
+		if (env->current_index == (env->pieces_count + env->offset))
+			return (1);
 		env->current_index++;
 	}
 	ft_update_tetrimino(env);
-	ft_compute(env);
-	return (1);
+	return (ft_compute(env));
 }

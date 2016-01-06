@@ -39,6 +39,7 @@ typedef struct		s_env
 	int				width;
 	int				pieces_count;
 	int				current_index;
+	int				offset;
 	t_tetriminos	*current_tetrimino;
 	t_tetriminos	*pieces;
 	char			**map;
@@ -56,4 +57,5 @@ int					ft_update_tetrimino(t_env *env);
 int					ft_place(t_env *env);
 int					ft_remove(t_env *env);
 void				ft_next(t_env *env);
+int					ft_generate_map(t_env *env);
 #endif
