@@ -70,7 +70,7 @@ int		ft_update_tetrimino(t_env *env)
 
 	t_tmp = env->pieces;
 	i = 0;
-	while (i <= env->current_index)
+	while (i <= env->current_index && i < (env->pieces_count + env->offset))
 	{
 		if (!t_tmp->next)
 		{
