@@ -12,8 +12,8 @@
 
 #include <ft_fillit.h>
 #include <libft.h>
-#define X env->x + env->current_tetrimino->coords[i].x
-#define Y env->y + env->current_tetrimino->coords[i].y
+#define X (env->x + env->current_tetrimino->coords[i].x)
+#define Y (env->y + env->current_tetrimino->coords[i].y)
 
 int		ft_can_place(t_env *env)
 {
@@ -26,8 +26,9 @@ int		ft_can_place(t_env *env)
 	{
 		while (i < 4)
 		{
-			if (env->map[Y][X] != '.')
-				can_place = 0;
+			if (X < env->map_size && Y < env->map_size)
+				if (env->map[Y][X] != '.')
+					can_place = 0;
 		}
 	}
 	return (can_place);
@@ -99,7 +100,7 @@ int		ft_compute(t_env *env)
 	int		i;
 
 	i = 0;
-	if (!ft_can_place(env) && env->y > ft_sqrt(env->pieces_count * 4))
+	if (!ft_can_place(env) && env->y > env->map_size)
 	{
 		if (env->current_index == 0)
 			return (0);

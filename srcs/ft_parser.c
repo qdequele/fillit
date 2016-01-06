@@ -30,19 +30,18 @@ int		ft_fill_chars(char *str, int size)
 int		ft_generate_map(t_env *env)
 {
 	int i;
-	int map_size;
 
 	i = 0;
-	map_size = ft_sqrt((env->pieces_count + env->offset) * 4);
-	env->map = (char **)malloc(sizeof(char *) * map_size);
+	env->map_size = ft_sqrt((env->pieces_count + env->offset) * 4);
+	env->map = (char **)malloc(sizeof(char *) * env->map_size);
 	if (!env->map)
 		return (0);
-	while (i < map_size)
+	while (i < env->map_size)
 	{
-		env->map[i] = (char *)malloc(sizeof(char) * (map_size + 1));
+		env->map[i] = (char *)malloc(sizeof(char) * (env->map_size + 1));
 		if (!env->map[i])
 			return (0);
-		ft_fill_chars(env->map[i], map_size + 1);
+		ft_fill_chars(env->map[i], env->map_size + 1);
 		i++;
 	}
 	return (1);

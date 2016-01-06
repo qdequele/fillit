@@ -40,6 +40,7 @@ typedef struct		s_env
 	int				pieces_count;
 	int				current_index;
 	int				offset;
+	int				map_size;
 	t_tetriminos	*current_tetrimino;
 	t_tetriminos	*pieces;
 	char			**map;
