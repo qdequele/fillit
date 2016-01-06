@@ -27,13 +27,13 @@ int		ft_fill_chars(char *str, int size)
 	return (1);
 }
 
-int		ft_generate_map(t_env *env)
+int		ft_generate_map(t_env *env, int offset)
 {
 	int i;
 	int map_size;
 
 	i = 0;
-	map_size = ft_sqrt(env->pieces_count * 4);
+	map_size = ft_sqrt((env->pieces_count + offset) * 4);
 	env->map = (char **)malloc(sizeof(char *) * map_size);
 	if (!env->map)
 		return (0);
