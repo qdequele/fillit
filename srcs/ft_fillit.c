@@ -42,7 +42,7 @@ int		main(int ac, char **av)
 			//free map
 			ft_generate_map(env);
 		}
-		//affiche map
+		ft_show_map(env);
 		ft_putstr("ok\n");
 	}
 	return (1);
