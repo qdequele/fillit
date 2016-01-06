@@ -23,8 +23,6 @@ int		main(int ac, char **av)
 	env->current_index = 0;
 	env->map_size = 0;
 	env->offset = 0;
-	env->x = 0;
-	env->y = 0;
 	if (ac >= 2)
 	{
 		if (!ft_read_params(env, av))
@@ -33,14 +31,10 @@ int		main(int ac, char **av)
 			return (0);
 		if (!ft_parser(env))
 			return (0);
-		env->x = 0;
-		env->y = 0;
-		ft_generate_map(env);
-		while (ft_update_tetrimino(env) && !ft_compute(env))
+		while (ft_generate_map(env) && ft_update_tetrimino(env) && !ft_compute(env))
 		{
 			env->offset++;
 			//free map
-			ft_generate_map(env);
 		}
 		ft_show_map(env);
 	}

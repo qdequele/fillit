@@ -47,8 +47,6 @@ int		ft_check_tetriminos(t_env *env)
 			return (0);
 		env->x += 21;
 	}
-	env->x = 0;
-	env->y = 0;
 	return (1);
 }
 

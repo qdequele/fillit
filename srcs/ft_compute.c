@@ -158,6 +158,7 @@ int		ft_compute(t_env *env)
 	int		i;
 
 	i = 0;
+	ft_debug("ft_compute", env);
 	if (!ft_can_place(env))
 	{
 		if (env->y >= env->map_size - 1)
@@ -177,7 +178,6 @@ int		ft_compute(t_env *env)
 			return (1);
 		ft_next(env);
 	}
-	ft_debug("ft_compute", env);
 	ft_show_map(env);
 	return (ft_compute(env));
 }
