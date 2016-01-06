@@ -6,7 +6,7 @@
 /*   By: quentindequelen <quentindequelen@student.42.fr>+#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/15 16:01:45 by bjamin            #+#    #+#             */
-/*   Updated: 2016/01/06 09:41:56 by quentindequelen  ###   ########.fr       */
+/*   Updated: 2016/01/06 18:09:02 by quentindequelen  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ void	ft_debug(char *str, t_env *env)
 	ft_putnbr(env->pieces_count);
 	ft_putstr("\nenv->current_index : ");
 	ft_putnbr(env->current_index);
+	ft_putstr("\nenv->current_letter : ");
+	ft_putchar('A' + env->current_index);
 	ft_putstr("\nenv->offset : ");
 	ft_putnbr(env->offset);
 	ft_putstr("\nenv->map_size : ");
@@ -62,16 +64,34 @@ int		ft_can_place(t_env *env)
 	return (can_place);
 }
 
+int		ft_remember(t_env *env)
+{
+	t_tetriminos	*t_tmp;
+
+	t_tmp = env->current_tetrimino->next;
+	env->x = env->current_tetrimino->last->x;
+	env->y = env->current_tetrimino->last->y;
+	while (t_tmp && t_tmp->last)
+	{
+		if (t_tmp->letter == 'B')
+			ft_putstr("RAZ B\n");
+		t_tmp->last->x = 0;
+		t_tmp->last->y = 0;
+		t_tmp = t_tmp->next;
+	}
+	return (1);
+}
+
 int		ft_remove(t_env *env)
 {
 	int		x;
 	int		y;
 
 	y = 0;
-	while (y)
+	while (y < env->map_size)
 	{
 		x = 0;
-		while (x)
+		while (x < env->map_size)
 		{
 			if (env->map[y][x] >= 'A' + env->current_index)
 				env->map[y][x] = '.';
@@ -79,8 +99,8 @@ int		ft_remove(t_env *env)
 		}
 		y++;
 	}
-	env->current_index--;
-	ft_update_tetrimino(env);
+	ft_remember(env);
+	ft_debug("ft_remove", env);
 	return (1);
 }
 
@@ -94,8 +114,11 @@ int		ft_place(t_env *env)
 		env->map[Y][X] = env->current_tetrimino->letter;
 		i++;
 	}
+	env->current_tetrimino->last = ft_new_coord(env->x, env->y);
 	env->current_index++;
 	ft_update_tetrimino(env);
+	env->x = 0;
+	env->y = 0;
 	return (1);
 }
 
@@ -123,7 +146,6 @@ int		ft_update_tetrimino(t_env *env)
 
 void	ft_next(t_env *env)
 {
-	//ft_debug("ft_next", env);
 	if (env->x < (env->map_size - 1))
 		env->x++;
 	else
@@ -140,19 +162,24 @@ int		ft_compute(t_env *env)
 	i = 0;
 	if (!ft_can_place(env))
 	{
-		if (env->y > env->map_size)
+		if (env->y >= env->map_size - 1)
 		{
 			if (env->current_index == 0)
 				return (0);
+			env->current_index--;
+			ft_update_tetrimino(env);
 			ft_remove(env);
 		}
+		ft_next(env);
 	}
 	else
 	{
 		ft_place(env);
 		if (env->current_index == env->pieces_count)
 			return (1);
+		ft_next(env);
 	}
-	ft_next(env);
+	ft_debug("ft_compute", env);
+	ft_show_map(env);
 	return (ft_compute(env));
 }

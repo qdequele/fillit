@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parser.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qdequele <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: quentindequelen <quentindequelen@student.42.fr>+#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/15 15:55:35 by qdequele          #+#    #+#             */
-/*   Updated: 2015/12/30 17:09:01 by bjamin           ###   ########.fr       */
+/*   Updated: 2016/01/06 16:07:58 by quentindequelen  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ int		ft_generate_map(t_env *env)
 	int i;
 
 	i = 0;
-	ft_putnbr((env->pieces_count + env->offset) * 4);
 	env->map_size = ft_sqrt((env->pieces_count + env->offset) * 4);
 	//ft_debug("ft_generate_map", env);
 	env->map = (char **)malloc(sizeof(char *) * env->map_size);

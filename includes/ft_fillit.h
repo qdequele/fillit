@@ -6,7 +6,7 @@
 /*   By: quentindequelen <quentindequelen@student.42.fr>+#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/15 16:02:51 by qdequele          #+#    #+#             */
-/*   Updated: 2016/01/06 13:31:18 by bjamin           ###   ########.fr       */
+/*   Updated: 2016/01/06 18:10:28 by quentindequelen  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct		s_coord
 typedef struct		s_tetri
 {
 	t_coord			coords[4];
+	t_coord			*last;
 	struct s_tetri	*next;
 	char			letter;
 }					t_tetriminos;
@@ -61,5 +62,6 @@ void				ft_next(t_env *env);
 int					ft_generate_map(t_env *env);
 void				ft_debug(char *str, t_env *env);
 int					ft_show_map(t_env *env);
+int					ft_remember(t_env *env);
 
 #endif
