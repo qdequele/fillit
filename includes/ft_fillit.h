@@ -6,7 +6,7 @@
 /*   By: quentindequelen <quentindequelen@student.42.fr>+#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/15 16:02:51 by qdequele          #+#    #+#             */
-/*   Updated: 2016/01/06 09:42:44 by quentindequelen  ###   ########.fr       */
+/*   Updated: 2016/01/06 13:31:18 by bjamin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,6 @@ int					ft_remove(t_env *env);
 void				ft_next(t_env *env);
 int					ft_generate_map(t_env *env);
 void				ft_debug(char *str, t_env *env);
+int					ft_show_map(t_env *env);
+
 #endif
