@@ -74,7 +74,8 @@ int		ft_parser(t_env *env)
 			}
 			env->y++;
 		}
-		ft_push_tetrimino(env, coords);
+		if(!ft_push_tetrimino(env, coords))
+			return (0);
 		env->x += 21;
 	}
 	return (1);

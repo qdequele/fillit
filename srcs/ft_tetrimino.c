@@ -61,6 +61,8 @@ int		ft_push_tetrimino(t_env *env, t_coord *coords)
 	t_new->next = NULL;
 	t_new->letter = 'A' + env->pieces_count;
 	env->pieces_count++;
+	if (env->pieces_count > 26)
+		return (0);
 	if (env->pieces == NULL)
 		env->pieces = t_new;
 	else
