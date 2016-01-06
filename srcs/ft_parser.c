@@ -6,7 +6,7 @@
 /*   By: quentindequelen <quentindequelen@student.42.fr>+#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/15 15:55:35 by qdequele          #+#    #+#             */
-/*   Updated: 2016/01/06 16:07:58 by quentindequelen  ###   ########.fr       */
+/*   Updated: 2016/01/06 18:26:41 by quentindequelen  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int		ft_generate_map(t_env *env)
 	i = 0;
 	env->x = 0;
 	env->y = 0;
-	env->map_size = ft_sqrt((env->pieces_count + env->offset) * 4);
+	env->map_size = ft_sqrt((env->pieces_count + env->offset) * 2);
 	//ft_debug("ft_generate_map", env);
 	env->map = (char **)malloc(sizeof(char *) * env->map_size);
 	if (!env->map)
