@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_compute.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bjamin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: quentindequelen <quentindequelen@student.42.fr>+#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/15 16:01:45 by bjamin            #+#    #+#             */
-/*   Updated: 2016/01/05 15:45:44 by bjamin           ###   ########.fr       */
+/*   Updated: 2016/01/06 09:41:56 by quentindequelen  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,27 +83,36 @@ int		ft_update_tetrimino(t_env *env)
 	return (1);
 }
 
+void	ft_next(t_env *env)
+{
+	if (env->x < 4)
+		env->x++;
+	else
+	{
+		env->y++;
+		env->x = 0;
+	}
+}
+
 int		ft_compute(t_env *env)
 {
 	int		i;
 
 	i = 0;
-	if (ft_can_place(env))
+	if (!ft_can_place(env) && env->y > ft_sqrt(env->pieces_count * 4))
+	{
+		ft_remove(env);
+		ft_next(t_env *env)
+		env->current_index--;
+	}
+	else if (!ft_can_place(env))
+		ft_next(t_env *env)
+	else
 	{
 		ft_place(env);
 		env->current_index++;
-		ft_update_tetrimino(env);
 	}
-	else
-	{
-		if (env->x < 4)
-			env->x++;
-		else
-		{
-			env->y++;
-			env->x = 0;
-		}
-	}
+	ft_update_tetrimino(env);
 	ft_compute(env);
 	return (1);
 }
