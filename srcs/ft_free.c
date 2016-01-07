@@ -32,24 +32,31 @@ int		ft_free_map(t_env *env)
 	return (1);
 }
 
-int		ft_free_tetrimino(t_env *env)
+int		ft_free_tetrimino(t_tetriminos *tetrimino)
+{
+	int	i;
+
+	i = 0;
+	while (i < 4){
+		if (tetrimino->coords[i])
+			free(tetrimino->coords[i]);
+		i++;
+	}
+	if (tetrimino->last)
+				free(tetrimino->last);
+	if (tetrimino->coords)
+				free(tetrimino->coords);
+	return (1);
+}
+
+int		ft_free_tetriminos(t_env *env)
 {
 	t_tetriminos	*t_tmp;
-	int						i;
 
 	t_tmp = env->pieces;
 	while (t_tmp->next)
 	{
-		if (t_tmp->last)
-			free(t_tmp->last);
-		i = 0;
-		while (i < 4){
-			if (t_tmp->coords[i])
-				free(t_tmp->coords[i]);
-			i++;
-		}
-		if (t_tmp->coords)
-				free(t_tmp->coords);
+		ft_free_tetrimino(t_tmp);
 		t_tmp = t_tmp->next;
 	}
 	if (t_tmp)
@@ -64,9 +71,9 @@ int		ft_free_env(t_env *env)
 	ft_free_map(env);
 	if (env->str)
 		free(env->str);
+	ft_free_tetriminos(env);
 	if (env->current_tetrimino)
 		free(env->current_tetrimino);
-	ft_free_tetrimino(env);
 	if(env)
 		free(env);
 	return (1);
