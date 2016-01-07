@@ -35,20 +35,10 @@ int		ft_free_map(t_env *env)
 int		ft_free_tetrimino(t_env *env)
 {
 	t_tetriminos	*t_tmp;
-	int				i;
 
 	t_tmp = env->pieces;
 	while (t_tmp->next)
 	{
-		i = 0;
-		while (i < 4)
-		{
-			if (t_tmp->coords[i])
-				free(t_tmp->coords[i]);
-			i++;
-		}
-		if (t_tmp->coords)
-			free(t_tmp->coords);
 		if (t_tmp->last)
 			free(t_tmp->last);
 		t_tmp = t_tmp->next;
