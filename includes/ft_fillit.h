@@ -13,8 +13,8 @@
 #ifndef FT_FILLIT_H
 # define FT_FILLIT_H
 # define BUF_SIZE 5000
-# define X (env->x + env->current_tetrimino->coords[i].x)
-# define Y (env->y + env->current_tetrimino->coords[i].y)
+# define X (env->x + env->current_tetrimino->coords[i]->x)
+# define Y (env->y + env->current_tetrimino->coords[i]->y)
 
 # include <string.h>
 # include <stdlib.h>
@@ -27,7 +27,7 @@ typedef struct		s_coord
 
 typedef struct		s_tetri
 {
-	t_coord			coords[4];
+	t_coord			**coords;
 	t_coord			*last;
 	struct s_tetri	*next;
 	char			letter;
@@ -54,7 +54,7 @@ int					ft_read_params(t_env *env, char **av);
 
 int					ft_check_char(char *str, int x, int y);
 int					ft_check_tetriminos(t_env *env);
-int					ft_push_tetrimino(t_env *env, t_coord *coords);
+int					ft_push_tetrimino(t_env *env, t_coord **coords);
 
 int					ft_remember(t_env *env);
 int					ft_update_tetrimino(t_env *env);
