@@ -101,10 +101,12 @@ int		ft_free_map(t_env *env)
 	y = 0;
 	while (y < env->map_size)
 	{
-		free(env->map[y]);
+		if (env->map[y])
+			free(env->map[y]);
 		y++;
 	}
-	free(env->map);
+	if (env->map)
+		free(env->map);
 	env->x = 0;
 	env->y = 0;
 	return (1);
