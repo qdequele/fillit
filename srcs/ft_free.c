@@ -72,8 +72,6 @@ int		ft_free_env(t_env *env)
 	if (env->str)
 		free(env->str);
 	ft_free_tetriminos(env);
-	if (env->current_tetrimino)
-		free(env->current_tetrimino);
 	if(env)
 		free(env);
 	return (1);

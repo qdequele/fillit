@@ -39,6 +39,7 @@ int		main(int ac, char **av)
 		}
 		ft_debug("finish", env);
 		ft_show_map(env);
+		ft_free_env(env);
 	}
 	return (1);
 }

@@ -18,27 +18,30 @@
 #include <unistd.h>
 #include "ft_fillit.h"
 
+char 	*ft_strfjoin(char *s1, char *s2){
+	char *new_str;
+
+	new_str = ft_strjoin(s1, s2);
+	if (s1)
+		free(s1);
+	return (new_str);
+}
 int		ft_read_params(t_env *env, char **av)
 {
 	int		fd;
 	int		ret;
 	char	*buf;
-	char	*complete_buf;
 
 	buf = (char *)malloc(sizeof(char) * (BUF_SIZE + 1));
-	complete_buf = (char *)malloc(sizeof(char));
+	env->str = (char *)malloc(sizeof(char));
 	fd = open(av[1], O_RDWR, S_IRUSR | S_IWUSR);
 	if (fd == -1)
 		return (0);
 	while ((ret = read(fd, buf, BUF_SIZE)) != 0)
 	{
 		buf[ret] = '\0';
-		complete_buf = ft_strjoin(complete_buf, buf);
+		env->str = ft_strfjoin(env->str, buf);
 	}
-	env->str = (char *)malloc(sizeof(char) * (ft_strlen(complete_buf) + 1));
-	ft_strncpy(env->str, complete_buf, ft_strlen(complete_buf));
-	if (complete_buf)
-		free(complete_buf);
 	if (buf)
 		free(buf);
 	if (ft_strlen(env->str) > 1)
