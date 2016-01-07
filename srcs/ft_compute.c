@@ -53,7 +53,7 @@ int		ft_compute(t_env *env)
 	ft_debug("ft_compute", env);
 	i = 0;
 	env->step++;
-	if (!ft_can_place(env))
+	while (!ft_can_place(env))
 	{
 		if (env->y >= env->map_size - 1)
 		{
@@ -63,14 +63,13 @@ int		ft_compute(t_env *env)
 			ft_update_tetrimino(env);
 			ft_remove(env);
 		}
+		ft_next(env);
 	}
-	else
-	{
-		ft_place(env);
-		if (env->current_index == env->pieces_count)
-			return (1);
-	}
-	//ft_show_map(env);
+
+	ft_place(env);
+	if (env->current_index == env->pieces_count)
+		return (1);
 	ft_next(env);
+	//ft_show_map(env);
 	return (ft_compute(env));
 }
