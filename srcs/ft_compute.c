@@ -50,8 +50,9 @@ int		ft_compute(t_env *env)
 {
 	int		i;
 
-	//ft_debug("ft_compute", env);
+	ft_debug("ft_compute", env);
 	i = 0;
+	env->step++;
 	if (!ft_can_place(env))
 	{
 		if (env->y >= env->map_size - 1)

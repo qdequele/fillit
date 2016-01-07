@@ -35,8 +35,10 @@ int		ft_generate_map(t_env *env)
 	i = 0;
 	env->x = 0;
 	env->y = 0;
-	env->map_size = ft_sqrt((env->pieces_count + env->offset) * 4);
-
+	if(env->pieces_count < 4)
+		env->map_size = ft_sqrt((env->pieces_count + env->offset) * 2);
+	else
+		env->map_size = ft_sqrt((env->pieces_count + env->offset) * 4);
 	env->map = (char **)malloc(sizeof(char *) * env->map_size);
 	if (!env->map)
 		return (0);

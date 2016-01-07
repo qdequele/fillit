@@ -23,6 +23,7 @@ int		main(int ac, char **av)
 	env->current_index = 0;
 	env->map_size = 0;
 	env->offset = 0;
+	env->step = 0;
 	if (ac >= 2)
 	{
 		if (!ft_read_params(env, av))

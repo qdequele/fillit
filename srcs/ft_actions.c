@@ -63,7 +63,12 @@ int		ft_place(t_env *env)
 		env->map[Y][X] = env->current_tetrimino->letter;
 		i++;
 	}
-	env->current_tetrimino->last = ft_new_coord(env->x, env->y);
+	if(!env->current_tetrimino->last)
+		env->current_tetrimino->last = ft_new_coord(env->x, env->y);
+	else {
+		env->current_tetrimino->last->x = env->x;
+		env->current_tetrimino->last->y = env->y;
+	}
 	env->current_index++;
 	ft_update_tetrimino(env);
 	env->x = 0;
@@ -79,16 +84,28 @@ int		ft_update_tetrimino(t_env *env)
 	//ft_debug("ft_update_tetrimino", env);
 	t_tmp = env->pieces;
 	i = 0;
-	while (i < env->current_index && i <= env->pieces_count)
+	while (i < env->current_index && i <= env->pieces_count && t_tmp->next)
 	{
-		if (!t_tmp->next)
-		{
-			env->current_tetrimino = NULL;
-			return (0);
-		}
 		t_tmp = t_tmp->next;
 		i++;
 	}
 	env->current_tetrimino = t_tmp;
+	return (1);
+}
+
+int		ft_free_map(t_env *env)
+{
+	int y;
+
+	//ft_debug("ft_free_map", env);
+	y = 0;
+	while (y < env->map_size)
+	{
+		free(env->map[y]);
+		y++;
+	}
+	free(env->map);
+	env->x = 0;
+	env->y = 0;
 	return (1);
 }
