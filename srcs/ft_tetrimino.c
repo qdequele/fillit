@@ -26,7 +26,7 @@ int		ft_check_char(char *str, int x, int y)
 
 int		ft_check_tetriminos(t_env *env)
 {
-	ft_debug("ft_check_tetriminos", env);
+	//ft_debug("ft_check_tetriminos", env);
 	env->x = 0;
 	while (env->str[env->x] != '\0')
 	{

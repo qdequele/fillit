@@ -36,6 +36,7 @@ int		main(int ac, char **av)
 			env->offset++;
 			ft_free_map(env);
 		}
+		ft_debug("finish", env);
 		ft_show_map(env);
 	}
 	return (1);

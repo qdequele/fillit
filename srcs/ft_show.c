@@ -18,7 +18,7 @@ int		ft_show_map(t_env *env)
 	int x;
 	int y;
 
-	ft_debug("ft_show_map", env);
+	//ft_debug("ft_show_map", env);
 	y = 0;
 	while (y < env->map_size)
 	{
