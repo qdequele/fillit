@@ -72,9 +72,9 @@ void	ft_show_tetrimino(t_env *env)
 		while (i < 4)
 		{
 			ft_putchar('(');
-			ft_putnbr(t_tmp->coords[i].x);
+			ft_putnbr(t_tmp->coords[i]->x);
 			ft_putstr(" ; ");
-			ft_putnbr(t_tmp->coords[i].y);
+			ft_putnbr(t_tmp->coords[i]->y);
 			ft_putstr(") \n");
 			i++;
 		}

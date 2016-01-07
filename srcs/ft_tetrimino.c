@@ -51,7 +51,7 @@ int		ft_check_tetriminos(t_env *env)
 	return (1);
 }
 
-int		ft_push_tetrimino(t_env *env, t_coord *coords)
+int		ft_push_tetrimino(t_env *env, t_coord **coords)
 {
 	t_tetriminos	*t_new;
 	t_tetriminos	*t_tmp;
@@ -59,7 +59,7 @@ int		ft_push_tetrimino(t_env *env, t_coord *coords)
 	//ft_debug("ft_push_tetrimino", env);
 	if (!(t_new = (t_tetriminos *)malloc(sizeof(t_tetriminos))))
 		return (0);
-	ft_memcpy(t_new->coords, coords, sizeof(t_coord) * 4);
+	t_new->coords = coords;
 	t_new->next = NULL;
 	t_new->letter = 'A' + env->pieces_count;
 	env->pieces_count++;

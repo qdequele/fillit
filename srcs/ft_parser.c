@@ -55,7 +55,7 @@ int		ft_generate_map(t_env *env)
 
 int		ft_parser(t_env *env)
 {
-	t_coord			coords[4];
+	t_coord			**coords;
 	t_coord			*first;
 	int				i;
 
@@ -65,6 +65,7 @@ int		ft_parser(t_env *env)
 	{
 		env->y = 0;
 		i = 0;
+		coords = (t_coord **)malloc(sizeof(t_coord) * 4);
 		while (env->str[env->x + env->y] != '\0' && env->y < 20 && i < 4)
 		{
 			if (env->str[env->x + env->y] == '#')
@@ -73,7 +74,7 @@ int		ft_parser(t_env *env)
 					first = ft_new_coord(env->y / 5, env->y % 5);
 				if (!first)
 					return (0);
-				coords[i] = *ft_new_coord(
+				coords[i] = ft_new_coord(
 					(env->y % 5) - (first->y), (env->y / 5) - first->x);
 				i++;
 			}
