@@ -46,23 +46,23 @@ int		ft_free_tetrimino(t_tetriminos *tetrimino)
 				free(tetrimino->last);
 	if (tetrimino->coords)
 				free(tetrimino->coords);
+	if (tetrimino)
+				free(tetrimino);
 	return (1);
 }
 
 int		ft_free_tetriminos(t_env *env)
 {
 	t_tetriminos	*t_tmp;
+	t_tetriminos	*t_next;
 
 	t_tmp = env->pieces;
 	while (t_tmp)
 	{
+		t_next = t_tmp->next;
 		ft_free_tetrimino(t_tmp);
-		t_tmp = t_tmp->next;
+		t_tmp = t_next;
 	}
-	if (t_tmp)
-		free(t_tmp);
-	if (env->pieces)
-		free(env->pieces);
 	return (1);
 }
 
