@@ -3,21 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_show.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: quentindequelen <quentindequelen@student.42.fr>+#+  +:+       +#+        */
+/*   By: qdequele <qdequele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/06 13:26:46 by bjamin            #+#    #+#             */
-/*   Updated: 2016/01/06 23:41:59 by quentindequelen  ###   ########.fr       */
+/*   Updated: 2016/01/06 23:41:59 by qdequele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 #include <ft_fillit.h>
 
-int	ft_show_map(t_env *env)
+int		ft_show_map(t_env *env)
 {
 	int x;
 	int y;
 
+	ft_debug("ft_show_map", env);
 	y = 0;
 	while (y < env->map_size)
 	{

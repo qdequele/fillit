@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_actions.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qdequele <qdequele@student.42.fr>+#+  +:+       +#+        */
+/*   By: qdequele <qdequele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/15 16:01:45 by bjamin            #+#    #+#             */
-/*   Updated: 2016/01/06 23:56:21 by qdequele  ###   ########.fr       */
+/*   Updated: 2016/01/06 23:56:21 by qdequele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int		ft_remember(t_env *env)
 {
 	t_tetriminos	*t_tmp;
 
+	ft_debug("ft_remember", env);
 	t_tmp = env->current_tetrimino->next;
 	env->x = env->current_tetrimino->last->x;
 	env->y = env->current_tetrimino->last->y;
@@ -34,6 +35,7 @@ int		ft_remove(t_env *env)
 	int		x;
 	int		y;
 
+	ft_debug("ft_remove", env);
 	y = 0;
 	while (y < env->map_size)
 	{
@@ -54,6 +56,7 @@ int		ft_place(t_env *env)
 {
 	int i;
 
+	ft_debug("ft_place", env);
 	i = 0;
 	while (i < 4)
 	{
@@ -73,6 +76,7 @@ int		ft_update_tetrimino(t_env *env)
 	t_tetriminos	*t_tmp;
 	int				i;
 
+	//ft_debug("ft_update_tetrimino", env);
 	t_tmp = env->pieces;
 	i = 0;
 	while (i < env->current_index && i <= env->pieces_count)
@@ -86,5 +90,22 @@ int		ft_update_tetrimino(t_env *env)
 		i++;
 	}
 	env->current_tetrimino = t_tmp;
+	return (1);
+}
+
+int		ft_free_map(t_env *env)
+{
+	int y;
+
+	ft_debug("ft_free_map", env);
+	y = 0;
+	while (y < env->map_size)
+	{
+		free(env->map[y]);
+		y++;
+	}
+	free(env->map);
+	env->x = 0;
+	env->y = 0;
 	return (1);
 }

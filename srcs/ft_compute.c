@@ -3,22 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_compute.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: quentindequelen <quentindequelen@student.42.fr>+#+  +:+       +#+        */
+/*   By: qdequele <qdequele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/15 16:01:45 by bjamin            #+#    #+#             */
-/*   Updated: 2016/01/06 23:58:21 by quentindequelen  ###   ########.fr       */
+/*   Updated: 2016/01/06 23:58:21 by qdequele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_fillit.h>
 #include <libft.h>
-#define X (env->x + env->current_tetrimino->coords[i].x)
-#define Y (env->y + env->current_tetrimino->coords[i].y)
 
 int		ft_can_place(t_env *env)
 {
 	int		i;
 
+	//ft_debug("ft_can_place", env);
 	i = 0;
 	if (env->map[Y][X] == '.')
 	{
@@ -37,6 +36,7 @@ int		ft_can_place(t_env *env)
 
 void	ft_next(t_env *env)
 {
+	//ft_debug("ft_next", env);
 	if (env->x < (env->map_size - 1))
 		env->x++;
 	else
@@ -50,6 +50,7 @@ int		ft_compute(t_env *env)
 {
 	int		i;
 
+	//ft_debug("ft_compute", env);
 	i = 0;
 	if (!ft_can_place(env))
 	{
@@ -68,6 +69,7 @@ int		ft_compute(t_env *env)
 		if (env->current_index == env->pieces_count)
 			return (1);
 	}
+	ft_show_map(env);
 	ft_next(env);
 	return (ft_compute(env));
 }

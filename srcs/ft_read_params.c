@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_read_params.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qdequele <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: qdequele <qdequele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/15 16:02:51 by qdequele          #+#    #+#             */
 /*   Updated: 2015/12/30 17:10:02 by bjamin           ###   ########.fr       */

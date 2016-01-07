@@ -13,6 +13,8 @@
 #ifndef FT_FILLIT_H
 # define FT_FILLIT_H
 # define BUF_SIZE 5000
+# define X (env->x + env->current_tetrimino->coords[i].x)
+# define Y (env->y + env->current_tetrimino->coords[i].y)
 
 # include <string.h>
 # include <stdlib.h>
@@ -57,6 +59,7 @@ int					ft_remember(t_env *env);
 int					ft_update_tetrimino(t_env *env);
 int					ft_place(t_env *env);
 int					ft_remove(t_env *env);
+int					ft_free_map(t_env *env);
 
 t_coord				*ft_new_coord(int x, int y);
 

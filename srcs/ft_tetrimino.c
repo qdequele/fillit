@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tetrimino.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: quentindequelen <quentindequelen@student.42.fr>+#+  +:+       +#+        */
+/*   By: qdequele <qdequele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/15 15:55:35 by qdequele          #+#    #+#             */
-/*   Updated: 2016/01/06 23:42:07 by quentindequelen  ###   ########.fr       */
+/*   Updated: 2016/01/06 23:42:07 by qdequele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int		ft_check_char(char *str, int x, int y)
 
 int		ft_check_tetriminos(t_env *env)
 {
+	ft_debug("ft_check_tetriminos", env);
 	env->x = 0;
 	while (env->str[env->x] != '\0')
 	{
@@ -54,7 +55,8 @@ int		ft_push_tetrimino(t_env *env, t_coord *coords)
 {
 	t_tetriminos	*t_new;
 	t_tetriminos	*t_tmp;
-
+	
+	//ft_debug("ft_push_tetrimino", env);
 	if (!(t_new = (t_tetriminos *)malloc(sizeof(t_tetriminos))))
 		return (0);
 	ft_memcpy(t_new->coords, coords, sizeof(t_coord) * 4);

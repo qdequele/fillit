@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parser.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: quentindequelen <quentindequelen@student.42.fr>+#+  +:+       +#+        */
+/*   By: qdequele <qdequele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/15 15:55:35 by qdequele          #+#    #+#             */
-/*   Updated: 2016/01/06 23:49:18 by quentindequelen  ###   ########.fr       */
+/*   Updated: 2016/01/06 23:49:18 by qdequele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int		ft_generate_map(t_env *env)
 {
 	int i;
 
+	ft_debug("ft_generate_map", env);
 	i = 0;
 	env->x = 0;
 	env->y = 0;
@@ -56,6 +57,7 @@ int		ft_parser(t_env *env)
 	t_coord			first[1];
 	int				i;
 
+	ft_debug("ft_parser", env);
 	env->x = 0;
 	while (env->str[env->x])
 	{
