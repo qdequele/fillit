@@ -37,7 +37,7 @@ int		ft_free_tetrimino(t_tetriminos *tetrimino)
 	int	i;
 
 	i = 0;
-	while (i < 4){
+	while (i < 4) {
 		if (tetrimino->coords[i])
 			free(tetrimino->coords[i]);
 		i++;
@@ -54,7 +54,7 @@ int		ft_free_tetriminos(t_env *env)
 	t_tetriminos	*t_tmp;
 
 	t_tmp = env->pieces;
-	while (t_tmp->next)
+	while (t_tmp)
 	{
 		ft_free_tetrimino(t_tmp);
 		t_tmp = t_tmp->next;
