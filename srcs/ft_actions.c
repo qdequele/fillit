@@ -92,22 +92,3 @@ int		ft_update_tetrimino(t_env *env)
 	env->current_tetrimino = t_tmp;
 	return (1);
 }
-
-int		ft_free_map(t_env *env)
-{
-	int y;
-
-	ft_debug("ft_free_map", env);
-	y = 0;
-	while (y < env->map_size)
-	{
-		if (env->map[y])
-			free(env->map[y]);
-		y++;
-	}
-	if (env->map)
-		free(env->map);
-	env->x = 0;
-	env->y = 0;
-	return (1);
-}

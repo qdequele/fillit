@@ -59,7 +59,10 @@ int					ft_remember(t_env *env);
 int					ft_update_tetrimino(t_env *env);
 int					ft_place(t_env *env);
 int					ft_remove(t_env *env);
+
 int					ft_free_map(t_env *env);
+int					ft_free_tetrimino(t_env *env);
+int					ft_free_env(t_env *env);
 
 t_coord				*ft_new_coord(int x, int y);
 
