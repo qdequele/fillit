@@ -22,9 +22,10 @@ int		ft_read_params(t_env *env, char **av)
 {
 	int		fd;
 	int		ret;
-	char	buf[BUF_SIZE + 1];
+	char	*buf;
 	char	*complete_buf;
 
+	buf = (char *)malloc(sizeof(char) * (BUF_SIZE + 1));
 	complete_buf = (char *)malloc(sizeof(char));
 	fd = open(av[1], O_RDWR, S_IRUSR | S_IWUSR);
 	if (fd == -1)
@@ -36,6 +37,10 @@ int		ft_read_params(t_env *env, char **av)
 	}
 	env->str = (char *)malloc(sizeof(char) * (ft_strlen(complete_buf) + 1));
 	ft_strncpy(env->str, complete_buf, ft_strlen(complete_buf));
+	if (complete_buf)
+		free(complete_buf);
+	if (buf)
+		free(buf);
 	if (ft_strlen(env->str) > 1)
 		return (1);
 	else
