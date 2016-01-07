@@ -26,7 +26,7 @@ int		ft_check_char(char *str, int x, int y)
 
 int		ft_check_tetriminos(t_env *env)
 {
-	ft_debug("ft_check_tetriminos", env);
+	//ft_debug("ft_check_tetriminos", env);
 	env->x = 0;
 	while (env->str[env->x] != '\0')
 	{
@@ -55,7 +55,7 @@ int		ft_push_tetrimino(t_env *env, t_coord *coords)
 {
 	t_tetriminos	*t_new;
 	t_tetriminos	*t_tmp;
-	
+
 	//ft_debug("ft_push_tetrimino", env);
 	if (!(t_new = (t_tetriminos *)malloc(sizeof(t_tetriminos))))
 		return (0);

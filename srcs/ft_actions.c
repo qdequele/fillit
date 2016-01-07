@@ -17,7 +17,7 @@ int		ft_remember(t_env *env)
 {
 	t_tetriminos	*t_tmp;
 
-	ft_debug("ft_remember", env);
+	//ft_debug("ft_remember", env);
 	t_tmp = env->current_tetrimino->next;
 	env->x = env->current_tetrimino->last->x;
 	env->y = env->current_tetrimino->last->y;
@@ -35,7 +35,7 @@ int		ft_remove(t_env *env)
 	int		x;
 	int		y;
 
-	ft_debug("ft_remove", env);
+	//ft_debug("ft_remove", env);
 	y = 0;
 	while (y < env->map_size)
 	{
@@ -56,14 +56,19 @@ int		ft_place(t_env *env)
 {
 	int i;
 
-	ft_debug("ft_place", env);
+	//ft_debug("ft_place", env);
 	i = 0;
 	while (i < 4)
 	{
 		env->map[Y][X] = env->current_tetrimino->letter;
 		i++;
 	}
-	env->current_tetrimino->last = ft_new_coord(env->x, env->y);
+	if(!env->current_tetrimino->last)
+		env->current_tetrimino->last = ft_new_coord(env->x, env->y);
+	else {
+		env->current_tetrimino->last->x = env->x;
+		env->current_tetrimino->last->y = env->y;
+	}
 	env->current_index++;
 	ft_update_tetrimino(env);
 	env->x = 0;
@@ -79,13 +84,8 @@ int		ft_update_tetrimino(t_env *env)
 	//ft_debug("ft_update_tetrimino", env);
 	t_tmp = env->pieces;
 	i = 0;
-	while (i < env->current_index && i <= env->pieces_count)
+	while (i < env->current_index && i <= env->pieces_count && t_tmp->next)
 	{
-		if (!t_tmp->next)
-		{
-			env->current_tetrimino = NULL;
-			return (0);
-		}
 		t_tmp = t_tmp->next;
 		i++;
 	}
@@ -97,7 +97,7 @@ int		ft_free_map(t_env *env)
 {
 	int y;
 
-	ft_debug("ft_free_map", env);
+	//ft_debug("ft_free_map", env);
 	y = 0;
 	while (y < env->map_size)
 	{

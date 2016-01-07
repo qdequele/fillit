@@ -31,12 +31,14 @@ int		ft_generate_map(t_env *env)
 {
 	int i;
 
-	ft_debug("ft_generate_map", env);
+	//ft_debug("ft_generate_map", env);
 	i = 0;
 	env->x = 0;
 	env->y = 0;
-	env->map_size = ft_sqrt((env->pieces_count + env->offset) * 2);
-
+	if(env->pieces_count < 4)
+		env->map_size = ft_sqrt((env->pieces_count + env->offset) * 2);
+	else
+		env->map_size = ft_sqrt((env->pieces_count + env->offset) * 4);
 	env->map = (char **)malloc(sizeof(char *) * env->map_size);
 	if (!env->map)
 		return (0);
@@ -57,7 +59,7 @@ int		ft_parser(t_env *env)
 	t_coord			first[1];
 	int				i;
 
-	ft_debug("ft_parser", env);
+	//ft_debug("ft_parser", env);
 	env->x = 0;
 	while (env->str[env->x])
 	{

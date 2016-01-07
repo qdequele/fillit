@@ -44,6 +44,7 @@ typedef struct		s_env
 	int				current_index;
 	int				offset;
 	int				map_size;
+	int				step;
 	t_tetriminos	*current_tetrimino;
 	t_tetriminos	*pieces;
 	char			**map;

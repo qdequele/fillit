@@ -50,8 +50,9 @@ int		ft_compute(t_env *env)
 {
 	int		i;
 
-	//ft_debug("ft_compute", env);
+	ft_debug("ft_compute", env);
 	i = 0;
+	env->step++;
 	if (!ft_can_place(env))
 	{
 		if (env->y >= env->map_size - 1)
@@ -69,7 +70,10 @@ int		ft_compute(t_env *env)
 		if (env->current_index == env->pieces_count)
 			return (1);
 	}
-	ft_show_map(env);
+	//ft_show_map(env);
+	ft_putstr("\nStep = ");
+	ft_putnbr(env->step);
+	ft_putstr("\n");
 	ft_next(env);
 	return (ft_compute(env));
 }
