@@ -53,15 +53,15 @@ int		ft_generate_map(t_env *env)
 	return (1);
 }
 
-int		ft_set_coord(t_env *env, t_coord **coords, t_coord *first, int i)
+int		ft_set_coord(t_env *env, t_coord **coords, t_coord *first, int *i)
 {
 	if (env->str[env->x + env->y] == '#')
 	{
 		if (i == 0)
 			first = ft_new_coord(env->y / 5, env->y % 5);
-		if (!first)
+		if (i == 0 && !first)
 			return (0);
-		coords[i] = ft_new_coord(
+		coords[*i] = ft_new_coord(
 			(env->y % 5) - (first->y), (env->y / 5) - first->x);
 		i++;
 	}
@@ -84,10 +84,17 @@ int		ft_parser(t_env *env)
 		coords = (t_coord **)malloc(sizeof(t_coord) * 4);
 		while (env->str[env->x + env->y] != '\0' && env->y < 20 && i < 4)
 		{
-			if (ft_set_coord(env, coords, first, i))
-				env->y++;
-			else
-				return (0);
+			if (env->str[env->x + env->y] == '#')
+			{
+				if (i == 0)
+					first = ft_new_coord(env->y / 5, env->y % 5);
+				if (i == 0 && !first)
+					return (0);
+				coords[i] = ft_new_coord(
+					(env->y % 5) - (first->y), (env->y / 5) - first->x);
+				i++;
+			}
+			env->y++;
 		}
 		if (!ft_push_tetrimino(env, coords))
 			return (0);
