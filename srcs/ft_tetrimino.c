@@ -61,6 +61,7 @@ void	ft_push_tetrimino(t_env *env, t_coord **coords)
 	if (!(t_new = (t_tetriminos *)malloc(sizeof(t_tetriminos))))
 		ft_error(env);
 	t_new->coords = coords;
+	t_new->last = NULL;
 	t_new->next = NULL;
 	t_new->letter = 'A' + env->pieces_count;
 	env->pieces_count++;

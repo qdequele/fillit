@@ -34,9 +34,7 @@ int		ft_generate_map(t_env *env)
 	i = 0;
 	env->x = 0;
 	env->y = 0;
-	ft_debug("ft_generate_map 1", env);
 	env->map_size = ft_sqrt((env->pieces_count + env->offset) * 4);
-	ft_debug("ft_generate_map 2", env);
 	env->map = (char **)malloc(sizeof(char *) * env->map_size);
 	if (!env->map)
 		ft_error(env);
