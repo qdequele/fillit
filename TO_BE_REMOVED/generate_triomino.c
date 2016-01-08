@@ -14,10 +14,10 @@ int count_hashs(char ** str)
     int n = 0;
     int hashs = 0;
 
-    while(i < 5)
+    while (i < 5)
     {
         n = 0;
-        while(n < 5)
+        while (n < 5)
         {
             if (str[i][n] == '#')
                 hashs++;
@@ -93,12 +93,12 @@ int generate_piece(int validity)
     str[3] = strdup("....\n");
     str[4] = strdup("\n");
 
-    while(count_hashs(str) < 4)
+    while (count_hashs(str) < 4)
     {
         str[rnd(4)][rnd(4)] = '#';
     }
     i = 0;
-    while(i < 5)
+    while (i < 5)
     {
         strcat(piece, str[i]);
         i++;
@@ -132,17 +132,17 @@ int main(int ac, char **av)
 
     if (strcmp(av[1], "invalid") == 0)
     {
-        while(results < max)
+        while (results < max)
             results += generate_piece(-1);
     }
     if (strcmp(av[1], "wtf") == 0)
     {
-        while(results < max)
+        while (results < max)
             results += generate_piece(0);
     }
     if (strcmp(av[1], "valid") == 0)
     {
-        while(results < max)
+        while (results < max)
             results += generate_piece(1);
     }
 

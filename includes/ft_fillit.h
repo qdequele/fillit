@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_fillit.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: quentindequelen <quentindequelen@student.42.fr>+#+  +:+       +#+        */
+/*   By: qdequele <qdequele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/15 16:02:51 by qdequele          #+#    #+#             */
-/*   Updated: 2016/01/06 23:54:11 by quentindequelen  ###   ########.fr       */
+/*   Updated: 2016/01/06 23:54:11 by qdequele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,10 @@ void				ft_next(t_env *env);
 void				ft_debug(char *str, t_env *env);
 int					ft_show_map(t_env *env);
 void				ft_show_tetrimino(t_env *env);
+void				ft_error();
 
 int					ft_parser(t_env *env);
 int					ft_fill_chars(char *str, int size);
 int					ft_generate_map(t_env *env);
+int					ft_set_coord(t_env *env, t_coord **coords, t_coord *first, int i);
 #endif

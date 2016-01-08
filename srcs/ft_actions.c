@@ -63,9 +63,10 @@ int		ft_place(t_env *env)
 		env->map[Y][X] = env->current_tetrimino->letter;
 		i++;
 	}
-	if(!env->current_tetrimino->last)
+	if (!env->current_tetrimino->last)
 		env->current_tetrimino->last = ft_new_coord(env->x, env->y);
-	else {
+	else
+	{
 		env->current_tetrimino->last->x = env->x;
 		env->current_tetrimino->last->y = env->y;
 	}
