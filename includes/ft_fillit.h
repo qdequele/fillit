@@ -78,5 +78,4 @@ void				ft_error();
 int					ft_parser(t_env *env);
 int					ft_fill_chars(char *str, int size);
 int					ft_generate_map(t_env *env);
-int					ft_set_coord(t_env *env, t_coord **coords, t_coord *first, int i);
 #endif
