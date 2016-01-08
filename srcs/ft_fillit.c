@@ -13,17 +13,23 @@
 #include "ft_fillit.h"
 #include <libft.h>
 
-int		main(int ac, char **av)
+int		ft_init(t_env *env)
 {
-	t_env	*env;
-
-	env = (t_env *)malloc(sizeof(t_env));
 	env->pieces_count = 0;
 	env->pieces = NULL;
 	env->current_index = 0;
 	env->map_size = 0;
 	env->offset = 0;
 	env->step = 0;
+	return (1);
+}
+
+int		main(int ac, char **av)
+{
+	t_env	*env;
+
+	env = (t_env *)malloc(sizeof(t_env));
+	ft_init(env);
 	if (ac >= 2)
 	{
 		if (!ft_read_params(env, av))
@@ -32,7 +38,8 @@ int		main(int ac, char **av)
 			return (0);
 		if (!ft_parser(env))
 			return (0);
-		while (ft_generate_map(env) && ft_update_tetrimino(env) && !ft_compute(env))
+		while (ft_generate_map(env) && ft_update_tetrimino(env)
+				&& !ft_compute(env))
 		{
 			env->offset++;
 			ft_free_map(env);

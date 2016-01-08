@@ -82,3 +82,9 @@ void	ft_show_tetrimino(t_env *env)
 		ft_putchar('\n');
 	}
 }
+
+void	ft_error()
+{
+	ft_putstr("errror");
+	exit(1);
+}

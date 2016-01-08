@@ -35,7 +35,7 @@ int		ft_generate_map(t_env *env)
 	i = 0;
 	env->x = 0;
 	env->y = 0;
-	if(env->pieces_count < 4)
+	if (env->pieces_count < 4)
 		env->map_size = ft_sqrt((env->pieces_count + env->offset) * 2);
 	else
 		env->map_size = ft_sqrt((env->pieces_count + env->offset) * 4);
@@ -53,6 +53,21 @@ int		ft_generate_map(t_env *env)
 	return (1);
 }
 
+int		ft_set_coord(t_env *env, t_coord **coords, t_coord *first, int i)
+{
+	if (env->str[env->x + env->y] == '#')
+	{
+		if (i == 0)
+			first = ft_new_coord(env->y / 5, env->y % 5);
+		if (!first)
+			return (0);
+		coords[i] = ft_new_coord(
+			(env->y % 5) - (first->y), (env->y / 5) - first->x);
+		i++;
+	}
+	return (1);
+}
+
 int		ft_parser(t_env *env)
 {
 	t_coord			**coords;
@@ -61,6 +76,7 @@ int		ft_parser(t_env *env)
 
 	//ft_debug("ft_parser", env);
 	env->x = 0;
+	first = NULL;
 	while (env->str[env->x])
 	{
 		env->y = 0;
@@ -68,19 +84,12 @@ int		ft_parser(t_env *env)
 		coords = (t_coord **)malloc(sizeof(t_coord) * 4);
 		while (env->str[env->x + env->y] != '\0' && env->y < 20 && i < 4)
 		{
-			if (env->str[env->x + env->y] == '#')
-			{
-				if (i == 0)
-					first = ft_new_coord(env->y / 5, env->y % 5);
-				if (!first)
-					return (0);
-				coords[i] = ft_new_coord(
-					(env->y % 5) - (first->y), (env->y / 5) - first->x);
-				i++;
-			}
-			env->y++;
+			if (ft_set_coord(env, coords, first, i))
+				env->y++;
+			else
+				return (0);
 		}
-		if(!ft_push_tetrimino(env, coords))
+		if (!ft_push_tetrimino(env, coords))
 			return (0);
 		env->x += 21;
 	}
