@@ -28,7 +28,7 @@ char	*ft_strfjoin(char *s1, char *s2)
 	return (new_str);
 }
 
-int		ft_read_params(t_env *env, char **av)
+void	ft_read_params(t_env *env, char **av)
 {
 	int		fd;
 	int		ret;
@@ -38,7 +38,7 @@ int		ft_read_params(t_env *env, char **av)
 	env->str = (char *)malloc(sizeof(char));
 	fd = open(av[1], O_RDWR, S_IRUSR | S_IWUSR);
 	if (fd == -1)
-		return (0);
+		ft_error(env);
 	while ((ret = read(fd, buf, BUF_SIZE)) != 0)
 	{
 		buf[ret] = '\0';
@@ -46,8 +46,6 @@ int		ft_read_params(t_env *env, char **av)
 	}
 	if (buf)
 		free(buf);
-	if (ft_strlen(env->str) > 1)
-		return (1);
-	else
-		return (0);
+	if (ft_strlen(env->str) <= 1)
+		ft_error(env);
 }

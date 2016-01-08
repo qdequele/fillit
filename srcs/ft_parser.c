@@ -13,7 +13,7 @@
 #include <libft.h>
 #include "ft_fillit.h"
 
-int		ft_fill_chars(char *str, int size)
+void	ft_fill_chars(char *str, int size)
 {
 	int i;
 
@@ -24,7 +24,6 @@ int		ft_fill_chars(char *str, int size)
 		i++;
 	}
 	str[i] = '\0';
-	return (1);
 }
 
 int		ft_generate_map(t_env *env)
@@ -41,34 +40,19 @@ int		ft_generate_map(t_env *env)
 		env->map_size = ft_sqrt((env->pieces_count + env->offset) * 4);
 	env->map = (char **)malloc(sizeof(char *) * env->map_size);
 	if (!env->map)
-		return (0);
+		ft_error(env);
 	while (i < env->map_size)
 	{
 		env->map[i] = (char *)malloc(sizeof(char) * (env->map_size + 1));
 		if (!env->map[i])
-			return (0);
+			ft_error(env);
 		ft_fill_chars(env->map[i], env->map_size + 1);
 		i++;
 	}
 	return (1);
 }
 
-int		ft_set_coord(t_env *env, t_coord **coords, t_coord *first, int *i)
-{
-	if (env->str[env->x + env->y] == '#')
-	{
-		if (i == 0)
-			first = ft_new_coord(env->y / 5, env->y % 5);
-		if (i == 0 && !first)
-			return (0);
-		coords[*i] = ft_new_coord(
-			(env->y % 5) - (first->y), (env->y / 5) - first->x);
-		i++;
-	}
-	return (1);
-}
-
-int		ft_parser(t_env *env)
+void	ft_parser(t_env *env)
 {
 	t_coord			**coords;
 	t_coord			*first;
@@ -89,18 +73,16 @@ int		ft_parser(t_env *env)
 				if (i == 0)
 					first = ft_new_coord(env->y / 5, env->y % 5);
 				if (i == 0 && !first)
-					return (0);
+					ft_error(env);
 				coords[i] = ft_new_coord(
 					(env->y % 5) - (first->y), (env->y / 5) - first->x);
 				if (!coords[i])
-					return (0);
+					ft_error(env);
 				i++;
 			}
 			env->y++;
 		}
-		if (!ft_push_tetrimino(env, coords))
-			return (0);
+		ft_push_tetrimino(env, coords);
 		env->x += 21;
 	}
-	return (1);
 }

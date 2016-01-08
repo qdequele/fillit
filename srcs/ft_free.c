@@ -13,7 +13,7 @@
 #include <ft_fillit.h>
 #include <libft.h>
 
-int		ft_free_map(t_env *env)
+void	ft_free_map(t_env *env)
 {
 	int y;
 
@@ -29,7 +29,6 @@ int		ft_free_map(t_env *env)
 		free(env->map);
 	env->x = 0;
 	env->y = 0;
-	return (1);
 }
 
 int		ft_free_tetrimino(t_tetriminos *tetrimino)
