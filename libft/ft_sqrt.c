@@ -9,8 +9,5 @@ int ft_sqrt(int nb)
 	{
 		i++;
 	}
-	if ((nb % i) == 0)
-		return (i);
-	else
-		return(i + 1);
+	return(i);
 }

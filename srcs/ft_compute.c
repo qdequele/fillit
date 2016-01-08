@@ -49,7 +49,7 @@ void	ft_next(t_env *env)
 int		ft_compute(t_env *env)
 {
 	//ft_debug("ft_compute", env);
-	if (env->current_index == env->pieces_count - 1)
+	if (env->current_index == env->pieces_count)
 		ft_success(env);
 	while (!ft_can_place(env))
 	{

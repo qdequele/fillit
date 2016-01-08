@@ -93,6 +93,7 @@ void	ft_error(t_env *env)
 void	ft_success(t_env *env)
 {
 	ft_show_map(env);
+	ft_debug("ft_success", env);
 	ft_free_env(env);
 	exit(0);
 }
