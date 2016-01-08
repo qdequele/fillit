@@ -37,6 +37,8 @@ int		ft_free_tetrimino(t_tetriminos *tetrimino)
 	int	i;
 
 	i = 0;
+	if (!tetrimino)
+		return (0);
 	while (i < 4)
 	{
 		if (tetrimino->coords[i])

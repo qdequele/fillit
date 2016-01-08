@@ -81,7 +81,7 @@ int		ft_parser(t_env *env)
 	{
 		env->y = 0;
 		i = 0;
-		coords = (t_coord **)malloc(sizeof(t_coord) * 4);
+		coords = (t_coord **)malloc(sizeof(t_coord *) * 4);
 		while (env->str[env->x + env->y] != '\0' && env->y < 20 && i < 4)
 		{
 			if (env->str[env->x + env->y] == '#')
@@ -92,6 +92,8 @@ int		ft_parser(t_env *env)
 					return (0);
 				coords[i] = ft_new_coord(
 					(env->y % 5) - (first->y), (env->y / 5) - first->x);
+				if (!coords[i])
+					return (0);
 				i++;
 			}
 			env->y++;
