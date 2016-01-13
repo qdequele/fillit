@@ -36,6 +36,8 @@ void	ft_read_params(t_env *env, char **av)
 
 	buf = (char *)malloc(sizeof(char) * (BUF_SIZE + 1));
 	env->str = (char *)malloc(sizeof(char));
+	*buf = '\0';
+	*(env->str) = '\0';
 	fd = open(av[1], O_RDWR, S_IRUSR | S_IWUSR);
 	if (fd == -1)
 		ft_error(env);
