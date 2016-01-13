@@ -40,7 +40,7 @@ void	ft_read_params(t_env *env, char **av)
 		ft_error(env);
 	ret = read(fd, buf, BUF_SIZE);
 	buf[ret] = '\0';
-	env->str = (char *)malloc(sizeof(char) * ret);
+	env->str = ft_strnew(ret);
 	ft_strncpy(env->str, buf, ret);
 	if (ft_strlen(env->str) <= 1)
 		ft_error(env);
