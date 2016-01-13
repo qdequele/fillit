@@ -22,6 +22,8 @@ int		ft_init(t_env *env)
 	env->offset = 0;
 	env->step = 0;
 	env->x = 0;
+	env->y= 0;
+	env->width = 0;
 	env->height = 0;
 	return (1);
 }
