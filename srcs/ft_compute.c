@@ -51,6 +51,10 @@ int		ft_compute(t_env *env)
 	//ft_debug("ft_compute", env);
 	if (env->current_index == env->pieces_count)
 		ft_success(env);
+	//ft_putstr("\nstep= ");
+	//ft_putnbr(env->step);
+	//ft_putstr("\n");
+	env->step++;
 	while (!ft_can_place(env))
 	{
 		if (env->y >= env->map_size - 1)

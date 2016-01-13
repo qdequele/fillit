@@ -30,7 +30,7 @@ int		ft_generate_map(t_env *env)
 {
 	int i;
 
-	
+
 	i = 0;
 	env->x = 0;
 	env->y = 0;
@@ -58,7 +58,7 @@ void	ft_parser(t_env *env)
 	//ft_debug("ft_parser", env);
 	env->x = 0;
 	first = NULL;
-	while (env->str[env->x])
+	while (env->str[env->x] != '\0')
 	{
 		env->y = 0;
 		i = 0;
