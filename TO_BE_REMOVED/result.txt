@@ -1,0 +1,1227 @@
+######################
+
+ft_compute
+env->x : 1
+env->y : 0
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 1
+env->current_letter : B
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA..
+AA..
+....
+....
+
+######################
+
+ft_compute
+env->x : 2
+env->y : 0
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 1
+env->current_letter : B
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA..
+AA..
+....
+....
+
+######################
+
+ft_compute
+env->x : 1
+env->y : 0
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AAB.
+AAB.
+.BB.
+....
+
+######################
+
+ft_compute
+env->x : 2
+env->y : 0
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AAB.
+AAB.
+.BB.
+....
+
+######################
+
+ft_compute
+env->x : 3
+env->y : 0
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AAB.
+AAB.
+.BB.
+....
+
+######################
+
+ft_compute
+env->x : 0
+env->y : 1
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AAB.
+AAB.
+.BB.
+....
+
+######################
+
+ft_compute
+env->x : 1
+env->y : 1
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AAB.
+AAB.
+.BB.
+....
+
+######################
+
+ft_compute
+env->x : 2
+env->y : 1
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AAB.
+AAB.
+.BB.
+....
+
+######################
+
+ft_compute
+env->x : 3
+env->y : 1
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AAB.
+AAB.
+.BB.
+....
+
+######################
+
+ft_compute
+env->x : 0
+env->y : 2
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AAB.
+AAB.
+.BB.
+....
+
+######################
+
+ft_compute
+env->x : 1
+env->y : 2
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AAB.
+AAB.
+.BB.
+....
+
+######################
+
+ft_compute
+env->x : 2
+env->y : 2
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AAB.
+AAB.
+.BB.
+....
+
+######################
+
+ft_compute
+env->x : 3
+env->y : 2
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AAB.
+AAB.
+.BB.
+....
+
+######################
+
+ft_compute
+env->x : 0
+env->y : 3
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AAB.
+AAB.
+.BB.
+....
+
+######################
+
+ft_remove
+env->x : 2
+env->y : 0
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 1
+env->current_letter : B
+env->offset : 0
+env->map_size : 4
+--- END ---
+######################
+
+ft_compute
+env->x : 3
+env->y : 0
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 1
+env->current_letter : B
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA..
+AA..
+....
+....
+
+######################
+
+ft_compute
+env->x : 1
+env->y : 0
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA.B
+AA.B
+..BB
+....
+
+######################
+
+ft_compute
+env->x : 2
+env->y : 0
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA.B
+AA.B
+..BB
+....
+
+######################
+
+ft_compute
+env->x : 3
+env->y : 0
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA.B
+AA.B
+..BB
+....
+
+######################
+
+ft_compute
+env->x : 0
+env->y : 1
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA.B
+AA.B
+..BB
+....
+
+######################
+
+ft_compute
+env->x : 1
+env->y : 1
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA.B
+AA.B
+..BB
+....
+
+######################
+
+ft_compute
+env->x : 2
+env->y : 1
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA.B
+AA.B
+..BB
+....
+
+######################
+
+ft_compute
+env->x : 3
+env->y : 1
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA.B
+AA.B
+..BB
+....
+
+######################
+
+ft_compute
+env->x : 0
+env->y : 2
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA.B
+AA.B
+..BB
+....
+
+######################
+
+ft_compute
+env->x : 1
+env->y : 0
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 3
+env->current_letter : D
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA.B
+AA.B
+CCBB
+CC..
+
+######################
+
+ft_compute
+env->x : 2
+env->y : 0
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 3
+env->current_letter : D
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA.B
+AA.B
+CCBB
+CC..
+
+######################
+
+ft_compute
+env->x : 3
+env->y : 0
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 3
+env->current_letter : D
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA.B
+AA.B
+CCBB
+CC..
+
+######################
+
+ft_compute
+env->x : 0
+env->y : 1
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 3
+env->current_letter : D
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA.B
+AA.B
+CCBB
+CC..
+
+######################
+
+ft_compute
+env->x : 1
+env->y : 1
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 3
+env->current_letter : D
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA.B
+AA.B
+CCBB
+CC..
+
+######################
+
+ft_compute
+env->x : 2
+env->y : 1
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 3
+env->current_letter : D
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA.B
+AA.B
+CCBB
+CC..
+
+######################
+
+ft_compute
+env->x : 3
+env->y : 1
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 3
+env->current_letter : D
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA.B
+AA.B
+CCBB
+CC..
+
+######################
+
+ft_compute
+env->x : 0
+env->y : 2
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 3
+env->current_letter : D
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA.B
+AA.B
+CCBB
+CC..
+
+######################
+
+ft_compute
+env->x : 1
+env->y : 2
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 3
+env->current_letter : D
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA.B
+AA.B
+CCBB
+CC..
+
+######################
+
+ft_compute
+env->x : 2
+env->y : 2
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 3
+env->current_letter : D
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA.B
+AA.B
+CCBB
+CC..
+
+######################
+
+ft_compute
+env->x : 3
+env->y : 2
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 3
+env->current_letter : D
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA.B
+AA.B
+CCBB
+CC..
+
+######################
+
+ft_compute
+env->x : 0
+env->y : 3
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 3
+env->current_letter : D
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA.B
+AA.B
+CCBB
+CC..
+
+######################
+
+ft_remove
+env->x : 0
+env->y : 2
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+######################
+
+ft_compute
+env->x : 1
+env->y : 2
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA.B
+AA.B
+..BB
+....
+
+######################
+
+ft_compute
+env->x : 2
+env->y : 2
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA.B
+AA.B
+..BB
+....
+
+######################
+
+ft_compute
+env->x : 3
+env->y : 2
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA.B
+AA.B
+..BB
+....
+
+######################
+
+ft_compute
+env->x : 0
+env->y : 3
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA.B
+AA.B
+..BB
+....
+
+######################
+
+ft_remove
+env->x : 3
+env->y : 0
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 1
+env->current_letter : B
+env->offset : 0
+env->map_size : 4
+--- END ---
+######################
+
+ft_compute
+env->x : 0
+env->y : 1
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 1
+env->current_letter : B
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA..
+AA..
+....
+....
+
+######################
+
+ft_compute
+env->x : 1
+env->y : 1
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 1
+env->current_letter : B
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA..
+AA..
+....
+....
+
+######################
+
+ft_compute
+env->x : 2
+env->y : 1
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 1
+env->current_letter : B
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA..
+AA..
+....
+....
+
+######################
+
+ft_compute
+env->x : 1
+env->y : 0
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA..
+AAB.
+..B.
+.BB.
+
+######################
+
+ft_compute
+env->x : 2
+env->y : 0
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA..
+AAB.
+..B.
+.BB.
+
+######################
+
+ft_compute
+env->x : 3
+env->y : 0
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA..
+AAB.
+..B.
+.BB.
+
+######################
+
+ft_compute
+env->x : 0
+env->y : 1
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA..
+AAB.
+..B.
+.BB.
+
+######################
+
+ft_compute
+env->x : 1
+env->y : 1
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA..
+AAB.
+..B.
+.BB.
+
+######################
+
+ft_compute
+env->x : 2
+env->y : 1
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA..
+AAB.
+..B.
+.BB.
+
+######################
+
+ft_compute
+env->x : 3
+env->y : 1
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA..
+AAB.
+..B.
+.BB.
+
+######################
+
+ft_compute
+env->x : 0
+env->y : 2
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA..
+AAB.
+..B.
+.BB.
+
+######################
+
+ft_compute
+env->x : 1
+env->y : 2
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA..
+AAB.
+..B.
+.BB.
+
+######################
+
+ft_compute
+env->x : 2
+env->y : 2
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA..
+AAB.
+..B.
+.BB.
+
+######################
+
+ft_compute
+env->x : 3
+env->y : 2
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA..
+AAB.
+..B.
+.BB.
+
+######################
+
+ft_compute
+env->x : 0
+env->y : 3
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA..
+AAB.
+..B.
+.BB.
+
+######################
+
+ft_remove
+env->x : 2
+env->y : 1
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 1
+env->current_letter : B
+env->offset : 0
+env->map_size : 4
+--- END ---
+######################
+
+ft_compute
+env->x : 3
+env->y : 1
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 1
+env->current_letter : B
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA..
+AA..
+....
+....
+
+######################
+
+ft_compute
+env->x : 1
+env->y : 0
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA..
+AA.B
+...B
+..BB
+
+######################
+
+ft_compute
+env->x : 2
+env->y : 0
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA..
+AA.B
+...B
+..BB
+
+######################
+
+ft_compute
+env->x : 3
+env->y : 0
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA..
+AA.B
+...B
+..BB
+
+######################
+
+ft_compute
+env->x : 0
+env->y : 1
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA..
+AA.B
+...B
+..BB
+
+######################
+
+ft_compute
+env->x : 1
+env->y : 1
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA..
+AA.B
+...B
+..BB
+
+######################
+
+ft_compute
+env->x : 2
+env->y : 1
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA..
+AA.B
+...B
+..BB
+
+######################
+
+ft_compute
+env->x : 3
+env->y : 1
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA..
+AA.B
+...B
+..BB
+
+######################
+
+ft_compute
+env->x : 0
+env->y : 2
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 2
+env->current_letter : C
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA..
+AA.B
+...B
+..BB
+
+######################
+
+ft_compute
+env->x : 1
+env->y : 0
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 3
+env->current_letter : D
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA..
+AA.B
+CC.B
+CCBB
+
+######################
+
+ft_compute
+env->x : 2
+env->y : 0
+env->height : 4
+env->width : 4
+env->pieces_count : 4
+env->current_index : 3
+env->current_letter : D
+env->offset : 0
+env->map_size : 4
+--- END ---
+AA..
+AA.B
+CC.B
+CCBB
+
+AADD
+AADB
+CCDB
+CCBB
+
