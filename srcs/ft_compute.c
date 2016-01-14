@@ -56,7 +56,7 @@ int		ft_compute(t_env *env)
 		if (env->y >= env->map_size - 1)
 		{
 			if (env->current_index == 0)
-				ft_error(env);
+				return (0);
 			env->current_index--;
 			ft_update_tetrimino(env);
 			ft_remove(env);

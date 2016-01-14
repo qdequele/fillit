@@ -14,6 +14,11 @@
 #include <stdlib.h>
 #include "ft_fillit.h"
 
+#define top env->str[env->x + env->y - 5] == '#'
+#define bot env->str[env->x + env->y + 5] == '#'
+#define left env->str[env->x + env->y - 1] == '#'
+#define right env->str[env->x + env->y + 1] == '#'
+
 void	ft_check_char(t_env *env)
 {
 	if (!(env->str[env->x + env->y] == '.'
@@ -28,8 +33,19 @@ void	ft_check_char(t_env *env)
 		ft_error(env);
 }
 
+int		ft_check_near(t_env *env)
+{
+	if((env->str[env->x + env->y] == '#') 
+		&& ((top && left) || (top && bot) || (top && right) 
+		|| (right && bot) || (right && left) || (bot && left)))
+		return (1);
+	else
+		return (0);
+}
+
 void	ft_check_tetriminos(t_env *env)
 {
+	int		near;
 	//ft_debug("ft_check_tetriminos", env);
 	env->x = 0;
 	while (env->str[env->x] != '\0')
@@ -37,9 +53,11 @@ void	ft_check_tetriminos(t_env *env)
 		env->y = 0;
 		env->width = 0;
 		env->height = 0;
+		near = 0;
 		while (env->str[env->x + env->y] != '\0' && env->y < 20)
 		{
 			ft_check_char(env);
+			near += ft_check_near(env);
 			if (env->str[env->x + env->y] == '#')
 				env->width++;
 			if (env->str[env->x + env->y++] == '\n')
@@ -47,7 +65,8 @@ void	ft_check_tetriminos(t_env *env)
 		}
 		if (env->height != 4 || env->width != 4
 			|| (env->str[env->x + env->y] != '\n'
-			&& env->str[env->x + env->y] != '\0'))
+			&& env->str[env->x + env->y] != '\0')
+			|| near == 0)
 			ft_error(env);
 		env->x += 21;
 	}
