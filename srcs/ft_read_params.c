@@ -32,22 +32,16 @@ void	ft_read_params(t_env *env, char **av)
 {
 	int		fd;
 	int		ret;
-	char	*buf;
+	char	buf[BUF_SIZE + 1];
 
-	buf = (char *)malloc(sizeof(char) * (BUF_SIZE + 1));
-	env->str = (char *)malloc(sizeof(char));
-	*buf = '\0';
-	*(env->str) = '\0';
-	fd = open(av[1], O_RDWR, S_IRUSR | S_IWUSR);
+	ret = 0;
+	fd = open(av[1], O_RDONLY);
 	if (fd == -1)
 		ft_error(env);
-	while ((ret = read(fd, buf, BUF_SIZE)) != 0)
-	{
-		buf[ret] = '\0';
-		env->str = ft_strfjoin(env->str, buf);
-	}
-	if (buf)
-		free(buf);
+	ret = read(fd, buf, BUF_SIZE);
+	buf[ret] = '\0';
+	env->str = ft_strnew(ret);
+	ft_strncpy(env->str, buf, ret);
 	if (ft_strlen(env->str) <= 1)
 		ft_error(env);
 }

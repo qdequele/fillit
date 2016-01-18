@@ -44,6 +44,7 @@ int		main(int ac, char **av)
 		while (ft_generate_map(env) && ft_update_tetrimino(env)
 				&& !ft_compute(env))
 		{
+			env->step = 0;
 			env->offset++;
 			ft_free_map(env);
 		}
