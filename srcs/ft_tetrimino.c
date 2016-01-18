@@ -66,6 +66,7 @@ void	ft_check_tetriminos(t_env *env)
 		if (env->height != 4 || env->width != 4
 			|| (env->str[env->x + env->y] != '\n'
 			&& env->str[env->x + env->y] != '\0')
+			|| env->str[env->x + env->y + 1] == '\n'
 			|| near == 0)
 			ft_error(env);
 		env->x += 21;
