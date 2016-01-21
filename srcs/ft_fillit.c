@@ -21,6 +21,10 @@ int		ft_init(t_env *env)
 	env->map_size = 0;
 	env->offset = 0;
 	env->step = 0;
+	env->x = 0;
+	env->y= 0;
+	env->width = 0;
+	env->height = 0;
 	return (1);
 }
 
@@ -29,24 +33,25 @@ int		main(int ac, char **av)
 	t_env	*env;
 
 	env = (t_env *)malloc(sizeof(t_env));
+	if (!env)
+		ft_error(env);
 	ft_init(env);
-	if (ac >= 2)
+	if (ac == 2)
 	{
-		if (!ft_read_params(env, av))
-			return (0);
-		if (!ft_check_tetriminos(env))
-			return (0);
-		if (!ft_parser(env))
-			return (0);
+		ft_read_params(env, av);
+		ft_check_tetriminos(env);
+		ft_parser(env);
+		ft_check_returns(env);
 		while (ft_generate_map(env) && ft_update_tetrimino(env)
 				&& !ft_compute(env))
 		{
+			env->step = 0;
 			env->offset++;
 			ft_free_map(env);
 		}
-		ft_debug("finish", env);
-		ft_show_map(env);
-		ft_free_env(env);
+		//ft_debug("finish", env);
 	}
+	else
+		ft_error(env);
 	return (1);
 }

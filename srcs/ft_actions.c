@@ -36,6 +36,7 @@ int		ft_remove(t_env *env)
 	int		y;
 
 	//ft_debug("ft_remove", env);
+	ft_update_tetrimino(env);
 	y = 0;
 	while (y < env->map_size)
 	{
@@ -85,7 +86,7 @@ int		ft_update_tetrimino(t_env *env)
 	//ft_debug("ft_update_tetrimino", env);
 	t_tmp = env->pieces;
 	i = 0;
-	while (i < env->current_index && i <= env->pieces_count && t_tmp->next)
+	while (i < env->current_index && i <= env->pieces_count && t_tmp && t_tmp->next)
 	{
 		t_tmp = t_tmp->next;
 		i++;
