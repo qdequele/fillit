@@ -95,6 +95,8 @@ void	ft_check_returns(t_env *env){
 			returns++;
 		i++;
 	}
-	if ((returns % 2 == 0) || (env->pieces_count != ((returns - 1) /4)))
+	ft_putnbr(returns);
+	ft_putnbr(4 + (env->pieces_count - 1) * 5);
+	if (returns != (4 + (env->pieces_count - 1) * 5))
 		ft_error(env);
 }
