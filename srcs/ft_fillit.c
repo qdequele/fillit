@@ -22,7 +22,7 @@ int		ft_init(t_env *env)
 	env->offset = 0;
 	env->step = 0;
 	env->x = 0;
-	env->y= 0;
+	env->y = 0;
 	env->width = 0;
 	env->height = 0;
 	return (1);
@@ -49,7 +49,6 @@ int		main(int ac, char **av)
 			env->offset++;
 			ft_free_map(env);
 		}
-		//ft_debug("finish", env);
 	}
 	else
 		ft_error(env);

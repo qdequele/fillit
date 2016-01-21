@@ -30,7 +30,6 @@ int		ft_generate_map(t_env *env)
 {
 	int i;
 
-
 	i = 0;
 	env->x = 0;
 	env->y = 0;
@@ -83,7 +82,8 @@ void	ft_parser(t_env *env)
 	}
 }
 
-void	ft_check_returns(t_env *env){
+void	ft_check_returns(t_env *env)
+{
 	int i;
 	int returns;
 
@@ -95,6 +95,6 @@ void	ft_check_returns(t_env *env){
 			returns++;
 		i++;
 	}
-	if ((returns % 2 == 0) || (env->pieces_count != ((returns - 1) /4)))
+	if ((returns % 2 == 0) || (env->pieces_count != ((returns - 1) / 4)))
 		ft_error(env);
 }
