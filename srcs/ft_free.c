@@ -70,11 +70,14 @@ int		ft_free_tetriminos(t_env *env)
 
 int		ft_free_env(t_env *env)
 {
-	ft_free_map(env);
-	if (env->str)
-		free(env->str);
-	ft_free_tetriminos(env);
 	if (env)
-		free(env);
+	{
+		ft_free_map(env);
+		if (env->str)
+			free(env->str);
+		ft_free_tetriminos(env);
+		if (env)
+			free(env);
+	}
 	return (1);
 }

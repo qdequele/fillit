@@ -23,14 +23,23 @@ void	ft_check_char(t_env *env)
 {
 	if (!(env->str[env->x + env->y] == '.'
 		|| env->str[env->x + env->y] == '#'
-		|| env->str[env->x + env->y] == '\n'))
+		|| env->str[env->x + env->y] == '\n'
+		|| env->str[env->x + env->y] == '\0'))
+	{
+		ft_debug("ft_check_char 1", env);
 		ft_error(env);
+		ft_debug("ft_check_char 1-2", env);
+	}
 	if (env->str[env->x + env->y] == '#' 
 		&& !(env->str[env->x + env->y + 1] == '#'
 			|| env->str[env->x + env->y - 1] == '#'
 			|| env->str[env->x + env->y - 5] == '#'
 			|| env->str[env->x + env->y + 5] == '#'))
+	{
+		ft_debug("ft_check_char 2", env);
 		ft_error(env);
+		ft_debug("ft_check_char 2-2", env);
+	}
 }
 
 int		ft_check_near(t_env *env)

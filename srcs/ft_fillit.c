@@ -36,7 +36,7 @@ int		main(int ac, char **av)
 	if (!env)
 		ft_error(env);
 	ft_init(env);
-	if (ac >= 2)
+	if (ac == 2)
 	{
 		ft_read_params(env, av);
 		ft_check_tetriminos(env);
@@ -50,5 +50,7 @@ int		main(int ac, char **av)
 		}
 		//ft_debug("finish", env);
 	}
+	else
+		ft_error(env);
 	return (1);
 }
