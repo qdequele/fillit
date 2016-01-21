@@ -15,6 +15,10 @@
 # define BUF_SIZE 5000
 # define X (env->x + env->current_tetrimino->coords[i]->x)
 # define Y (env->y + env->current_tetrimino->coords[i]->y)
+# define TOP env->str[env->x + env->y - 5] == '#'
+# define BOT env->str[env->x + env->y + 5] == '#'
+# define LEFT env->str[env->x + env->y - 1] == '#'
+# define RIGHT env->str[env->x + env->y + 1] == '#'
 
 # include <string.h>
 # include <stdlib.h>
