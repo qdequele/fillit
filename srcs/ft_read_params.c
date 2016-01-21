@@ -28,26 +28,20 @@ char	*ft_strfjoin(char *s1, char *s2)
 	return (new_str);
 }
 
-int		ft_read_params(t_env *env, char **av)
+void	ft_read_params(t_env *env, char **av)
 {
 	int		fd;
 	int		ret;
-	char	*buf;
+	char	buf[BUF_SIZE + 1];
 
-	buf = (char *)malloc(sizeof(char) * (BUF_SIZE + 1));
-	env->str = (char *)malloc(sizeof(char));
-	fd = open(av[1], O_RDWR, S_IRUSR | S_IWUSR);
+	ret = 0;
+	fd = open(av[1], O_RDONLY);
 	if (fd == -1)
-		return (0);
-	while ((ret = read(fd, buf, BUF_SIZE)) != 0)
-	{
-		buf[ret] = '\0';
-		env->str = ft_strfjoin(env->str, buf);
-	}
-	if (buf)
-		free(buf);
-	if (ft_strlen(env->str) > 1)
-		return (1);
-	else
-		return (0);
+		ft_error(env);
+	ret = read(fd, buf, BUF_SIZE);
+	buf[ret] = '\0';
+	env->str = ft_strnew(ret);
+	ft_strncpy(env->str, buf, ret);
+	if (ft_strlen(env->str) <= 1)
+		ft_error(env);
 }

@@ -15,6 +15,10 @@
 # define BUF_SIZE 5000
 # define X (env->x + env->current_tetrimino->coords[i]->x)
 # define Y (env->y + env->current_tetrimino->coords[i]->y)
+# define TOP env->str[env->x + env->y - 5] == '#'
+# define BOT env->str[env->x + env->y + 5] == '#'
+# define LEFT env->str[env->x + env->y - 1] == '#'
+# define RIGHT env->str[env->x + env->y + 1] == '#'
 
 # include <string.h>
 # include <stdlib.h>
@@ -50,18 +54,18 @@ typedef struct		s_env
 	char			**map;
 }					t_env;
 
-int					ft_read_params(t_env *env, char **av);
+void				ft_read_params(t_env *env, char **av);
 
-int					ft_check_char(char *str, int x, int y);
-int					ft_check_tetriminos(t_env *env);
-int					ft_push_tetrimino(t_env *env, t_coord **coords);
+void				ft_check_char(t_env *env);
+void				ft_check_tetriminos(t_env *env);
+void				ft_push_tetrimino(t_env *env, t_coord **coords);
 
 int					ft_remember(t_env *env);
 int					ft_update_tetrimino(t_env *env);
 int					ft_place(t_env *env);
 int					ft_remove(t_env *env);
 
-int					ft_free_map(t_env *env);
+void				ft_free_map(t_env *env);
 int					ft_free_env(t_env *env);
 
 t_coord				*ft_new_coord(int x, int y);
@@ -73,9 +77,12 @@ void				ft_next(t_env *env);
 void				ft_debug(char *str, t_env *env);
 int					ft_show_map(t_env *env);
 void				ft_show_tetrimino(t_env *env);
-void				ft_error();
+void				ft_error(t_env *env);
+void				ft_success(t_env *env);
 
-int					ft_parser(t_env *env);
-int					ft_fill_chars(char *str, int size);
+void				ft_parser(t_env *env);
+void				ft_check_returns(t_env *env);
+void				ft_fill_chars(char *str, int size);
 int					ft_generate_map(t_env *env);
+
 #endif

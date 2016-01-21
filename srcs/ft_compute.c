@@ -17,7 +17,6 @@ int		ft_can_place(t_env *env)
 {
 	int		i;
 
-	//ft_debug("ft_can_place", env);
 	i = 0;
 	if (env->map[Y][X] == '.')
 	{
@@ -36,7 +35,6 @@ int		ft_can_place(t_env *env)
 
 void	ft_next(t_env *env)
 {
-	//ft_debug("ft_next", env);
 	if (env->x < (env->map_size - 1))
 		env->x++;
 	else
@@ -48,29 +46,22 @@ void	ft_next(t_env *env)
 
 int		ft_compute(t_env *env)
 {
-	int		i;
-
-	ft_debug("ft_compute", env);
-	i = 0;
-	env->step++;
-	if (!ft_can_place(env))
+	while (env->current_index != env->pieces_count)
 	{
-		if (env->y >= env->map_size - 1)
+		while (!ft_can_place(env))
 		{
-			if (env->current_index == 0)
-				return (0);
-			env->current_index--;
-			ft_update_tetrimino(env);
-			ft_remove(env);
+			if (env->y >= env->map_size - 1)
+			{
+				if (env->current_index == 0)
+					return (0);
+				env->current_index--;
+				ft_remove(env);
+			}
+			ft_next(env);
 		}
-	}
-	else
-	{
 		ft_place(env);
-		if (env->current_index == env->pieces_count)
-			return (1);
+		ft_next(env);
 	}
-	//ft_show_map(env);
-	ft_next(env);
-	return (ft_compute(env));
+	ft_success(env);
+	return (1);
 }

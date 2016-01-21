@@ -14,29 +14,51 @@
 #include <stdlib.h>
 #include "ft_fillit.h"
 
-int		ft_check_char(char *str, int x, int y)
+void	ft_check_char(t_env *env)
 {
-	if (!(str[x + y] == '.' || str[x + y] == '#' || str[x + y] == '\n'))
-		return (0);
-	if (str[x + y] == '#' && !(str[x + y + 1] == '#' | str[x + y - 1] == '#'
-		|| str[x + y - 5] == '#' || str[x + y + 5] == '#'))
-		return (0);
-	return (1);
+	if (!(env->str[env->x + env->y] == '.'
+		|| env->str[env->x + env->y] == '#'
+		|| env->str[env->x + env->y] == '\n'
+		|| env->str[env->x + env->y] == '\0'))
+	{
+		ft_debug("ft_check_char 1", env);
+		ft_error(env);
+		ft_debug("ft_check_char 1-2", env);
+	}
+	if (env->str[env->x + env->y] == '#'
+		&& !(env->str[env->x + env->y + 1] == '#'
+			|| env->str[env->x + env->y - 1] == '#'
+			|| env->str[env->x + env->y - 5] == '#'
+			|| env->str[env->x + env->y + 5] == '#'))
+	{
+		ft_debug("ft_check_char 2", env);
+		ft_error(env);
+		ft_debug("ft_check_char 2-2", env);
+	}
 }
 
-int		ft_check_tetriminos(t_env *env)
+int		ft_check_near(t_env *env)
 {
-	//ft_debug("ft_check_tetriminos", env);
+	return ((env->str[env->x + env->y] == '#')
+		&& ((TOP && LEFT) || (TOP && BOT) || (TOP && RIGHT)
+		|| (RIGHT && BOT) || (RIGHT && LEFT) || (BOT && LEFT)));
+}
+
+void	ft_check_tetriminos(t_env *env)
+{
+	int		near;
+
 	env->x = 0;
 	while (env->str[env->x] != '\0')
 	{
 		env->y = 0;
 		env->width = 0;
 		env->height = 0;
+		near = 0;
 		while (env->str[env->x + env->y] != '\0' && env->y < 20)
 		{
-			if (ft_check_char(env->str, env->x, env->y) == 0)
-				return (0);
+			ft_check_char(env);
+			near += ft_check_near(env);
 			if (env->str[env->x + env->y] == '#')
 				env->width++;
 			if (env->str[env->x + env->y++] == '\n')
@@ -44,26 +66,27 @@ int		ft_check_tetriminos(t_env *env)
 		}
 		if (env->height != 4 || env->width != 4
 			|| (env->str[env->x + env->y] != '\n'
-			&& env->str[env->x + env->y] != '\0'))
-			return (0);
+			&& env->str[env->x + env->y] != '\0')
+			|| env->str[env->x + env->y + 1] == '\n' || near == 0)
+			ft_error(env);
 		env->x += 21;
 	}
-	return (1);
 }
 
-int		ft_push_tetrimino(t_env *env, t_coord **coords)
+void	ft_push_tetrimino(t_env *env, t_coord **coords)
 {
 	t_tetriminos	*t_new;
 	t_tetriminos	*t_tmp;
 
 	if (!(t_new = (t_tetriminos *)malloc(sizeof(t_tetriminos))))
-		return (0);
+		ft_error(env);
 	t_new->coords = coords;
+	t_new->last = NULL;
 	t_new->next = NULL;
 	t_new->letter = 'A' + env->pieces_count;
 	env->pieces_count++;
 	if (env->pieces_count > 26)
-		return (0);
+		ft_error(env);
 	if (env->pieces == NULL)
 		env->pieces = t_new;
 	else
@@ -75,5 +98,4 @@ int		ft_push_tetrimino(t_env *env, t_coord **coords)
 		}
 		t_tmp->next = t_new;
 	}
-	return (1);
 }

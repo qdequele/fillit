@@ -18,7 +18,6 @@ int		ft_show_map(t_env *env)
 	int x;
 	int y;
 
-	//ft_debug("ft_show_map", env);
 	y = 0;
 	while (y < env->map_size)
 	{
@@ -83,8 +82,16 @@ void	ft_show_tetrimino(t_env *env)
 	}
 }
 
-void	ft_error()
+void	ft_error(t_env *env)
 {
-	ft_putstr("errror");
-	exit(1);
+	ft_putstr("error\n");
+	ft_free_env(env);
+	exit(0);
+}
+
+void	ft_success(t_env *env)
+{
+	ft_show_map(env);
+	ft_free_env(env);
+	exit(0);
 }

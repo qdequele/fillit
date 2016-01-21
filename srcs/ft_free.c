@@ -13,11 +13,10 @@
 #include <ft_fillit.h>
 #include <libft.h>
 
-int		ft_free_map(t_env *env)
+void	ft_free_map(t_env *env)
 {
 	int y;
 
-	//ft_debug("ft_free_map", env);
 	y = 0;
 	while (y < env->map_size)
 	{
@@ -29,7 +28,6 @@ int		ft_free_map(t_env *env)
 		free(env->map);
 	env->x = 0;
 	env->y = 0;
-	return (1);
 }
 
 int		ft_free_tetrimino(t_tetriminos *tetrimino)
@@ -37,6 +35,8 @@ int		ft_free_tetrimino(t_tetriminos *tetrimino)
 	int	i;
 
 	i = 0;
+	if (!tetrimino)
+		return (0);
 	while (i < 4)
 	{
 		if (tetrimino->coords[i])
@@ -69,11 +69,14 @@ int		ft_free_tetriminos(t_env *env)
 
 int		ft_free_env(t_env *env)
 {
-	ft_free_map(env);
-	if (env->str)
-		free(env->str);
-	ft_free_tetriminos(env);
 	if (env)
-		free(env);
+	{
+		ft_free_map(env);
+		if (env->str)
+			free(env->str);
+		ft_free_tetriminos(env);
+		if (env)
+			free(env);
+	}
 	return (1);
 }
