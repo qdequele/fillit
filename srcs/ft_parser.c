@@ -55,7 +55,6 @@ void	ft_parser(t_env *env)
 	t_coord			*first;
 	int				i;
 
-	//ft_debug("ft_parser", env);
 	env->x = 0;
 	first = NULL;
 	while (env->str[env->x] != '\0')
@@ -82,4 +81,20 @@ void	ft_parser(t_env *env)
 		ft_push_tetrimino(env, coords);
 		env->x += 21;
 	}
+}
+
+void	ft_check_returns(t_env *env){
+	int i;
+	int returns;
+
+	i = 0;
+	returns = 0;
+	while (env->str[i] != '\0')
+	{
+		if (env->str[i] == '\n')
+			returns++;
+		i++;
+	}
+	if ((returns % 2 == 0) || (env->pieces_count != ((returns - 1) /4)))
+		ft_error(env);
 }

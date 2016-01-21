@@ -77,6 +77,7 @@ void				ft_error(t_env *env);
 void				ft_success(t_env *env);
 
 void				ft_parser(t_env *env);
+void				ft_check_returns(t_env *env);
 void				ft_fill_chars(char *str, int size);
 int					ft_generate_map(t_env *env);
 

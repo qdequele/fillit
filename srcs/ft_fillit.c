@@ -41,6 +41,7 @@ int		main(int ac, char **av)
 		ft_read_params(env, av);
 		ft_check_tetriminos(env);
 		ft_parser(env);
+		ft_check_returns(env);
 		while (ft_generate_map(env) && ft_update_tetrimino(env)
 				&& !ft_compute(env))
 		{
