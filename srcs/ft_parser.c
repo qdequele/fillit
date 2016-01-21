@@ -30,7 +30,6 @@ int		ft_generate_map(t_env *env)
 {
 	int i;
 
-
 	i = 0;
 	env->x = 0;
 	env->y = 0;

@@ -17,7 +17,6 @@ int		ft_can_place(t_env *env)
 {
 	int		i;
 
-	//ft_debug("ft_can_place", env);
 	i = 0;
 	if (env->map[Y][X] == '.')
 	{
@@ -36,7 +35,6 @@ int		ft_can_place(t_env *env)
 
 void	ft_next(t_env *env)
 {
-	//ft_debug("ft_next", env);
 	if (env->x < (env->map_size - 1))
 		env->x++;
 	else
@@ -48,7 +46,7 @@ void	ft_next(t_env *env)
 
 int		ft_compute(t_env *env)
 {
-	while(env->current_index != env->pieces_count)
+	while (env->current_index != env->pieces_count)
 	{
 		while (!ft_can_place(env))
 		{

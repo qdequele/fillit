@@ -14,10 +14,10 @@
 #include <stdlib.h>
 #include "ft_fillit.h"
 
-#define top env->str[env->x + env->y - 5] == '#'
-#define bot env->str[env->x + env->y + 5] == '#'
-#define left env->str[env->x + env->y - 1] == '#'
-#define right env->str[env->x + env->y + 1] == '#'
+#DEFINE top env->str[env->x + env->y - 5] == '#'
+#DEFINE bot env->str[env->x + env->y + 5] == '#'
+#DEFINE left env->str[env->x + env->y - 1] == '#'
+#DEFINE right env->str[env->x + env->y + 1] == '#'
 
 void	ft_check_char(t_env *env)
 {
@@ -30,7 +30,7 @@ void	ft_check_char(t_env *env)
 		ft_error(env);
 		ft_debug("ft_check_char 1-2", env);
 	}
-	if (env->str[env->x + env->y] == '#' 
+	if (env->str[env->x + env->y] == '#'
 		&& !(env->str[env->x + env->y + 1] == '#'
 			|| env->str[env->x + env->y - 1] == '#'
 			|| env->str[env->x + env->y - 5] == '#'
@@ -44,8 +44,8 @@ void	ft_check_char(t_env *env)
 
 int		ft_check_near(t_env *env)
 {
-	if((env->str[env->x + env->y] == '#') 
-		&& ((top && left) || (top && bot) || (top && right) 
+	if ((env->str[env->x + env->y] == '#')
+		&& ((top && left) || (top && bot) || (top && right)
 		|| (right && bot) || (right && left) || (bot && left)))
 		return (1);
 	else
@@ -55,7 +55,7 @@ int		ft_check_near(t_env *env)
 void	ft_check_tetriminos(t_env *env)
 {
 	int		near;
-	//ft_debug("ft_check_tetriminos", env);
+
 	env->x = 0;
 	while (env->str[env->x] != '\0')
 	{

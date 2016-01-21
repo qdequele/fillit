@@ -17,7 +17,6 @@ void	ft_free_map(t_env *env)
 {
 	int y;
 
-	//ft_debug("ft_free_map", env);
 	y = 0;
 	while (y < env->map_size)
 	{
