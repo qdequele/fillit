@@ -19,6 +19,8 @@ int		ft_init(t_env *env)
 	env->pieces = NULL;
 	env->current_index = 0;
 	env->map_size = 0;
+	env->map = NULL;
+	env->str = NULL;
 	env->offset = 0;
 	env->step = 0;
 	env->x = 0;
