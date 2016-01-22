@@ -48,8 +48,8 @@ int		ft_generate_map(t_env *env)
 	return (1);
 }
 
-
-void	ft_parse_coords(t_env *env, t_coord *first, t_coord **coords){
+void	ft_parse_coords(t_env *env, t_coord *first, t_coord **coords)
+{
 	int		i;
 
 	i = 0;
@@ -73,8 +73,8 @@ void	ft_parse_coords(t_env *env, t_coord *first, t_coord **coords){
 
 void	ft_parser(t_env *env)
 {
-	t_coord			**coords;
-	t_coord			*first;
+	t_coord	**coords;
+	t_coord	*first;
 
 	env->x = 0;
 	first = NULL;
