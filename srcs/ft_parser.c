@@ -48,39 +48,40 @@ int		ft_generate_map(t_env *env)
 	return (1);
 }
 
-void	ft_parse_coords(t_env *env, t_coord *first, t_coord **coords, int *i){
-	if (env->str[env->x + env->y] == '#')
+void	ft_parse_coords(t_env *env, t_coord *first, t_coord **coords){
+	int		i;
+
+	i = 0;
+	while (env->str[env->x + env->y] != '\0' && env->y < 20 && i < 4)
 	{
-		if (*i == 0)
-			first = ft_new_coord(env->y / 5, env->y % 5);
-		if (*i == 0 && !first)
-			ft_error(env);
-		coords[*i] = ft_new_coord(
-					(env->y % 5) - (first->y), (env->y / 5) - first->x);
-		if (!coords[*i])
-			ft_error(env);
-		(*i)++;
+		if (env->str[env->x + env->y] == '#')
+		{
+			if (i == 0)
+				first = ft_new_coord(env->y / 5, env->y % 5);
+			if (i == 0 && !first)
+				ft_error(env);
+			coords[i] = ft_new_coord(
+						(env->y % 5) - (first->y), (env->y / 5) - first->x);
+			if (!coords)
+				ft_error(env);
+			i++;
+		}
+		env->y++;
 	}
-	env->y++;
 }
 
 void	ft_parser(t_env *env)
 {
 	t_coord			**coords;
 	t_coord			*first;
-	int					i;
 
 	env->x = 0;
 	first = NULL;
 	while (env->str[env->x] != '\0')
 	{
 		env->y = 0;
-		i = 0;
 		coords = (t_coord **)malloc(sizeof(t_coord *) * 4);
-		while (env->str[env->x + env->y] != '\0' && env->y < 20 && i < 4)
-		{
-			ft_parse_coords(env, first, coords, &i);
-		}
+		ft_parse_coords(env, first, coords);
 		ft_push_tetrimino(env, coords);
 		env->x += 21;
 	}
@@ -98,8 +99,6 @@ void	ft_check_returns(t_env *env){
 			returns++;
 		i++;
 	}
-	ft_putnbr(returns);
-	ft_putnbr(4 + (env->pieces_count - 1) * 5);
 	if (returns != (4 + (env->pieces_count - 1) * 5))
 		ft_error(env);
 }
