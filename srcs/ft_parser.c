@@ -48,7 +48,8 @@ int		ft_generate_map(t_env *env)
 	return (1);
 }
 
-void	ft_parse_coords(t_env *env, t_coord *first, t_coord **coords, int *i){
+void	ft_parse_coords(t_env *env, t_coord *first, t_coord **coords, int *i)
+{
 	if (env->str[env->x + env->y] == '#')
 	{
 		if (*i == 0)
@@ -56,7 +57,7 @@ void	ft_parse_coords(t_env *env, t_coord *first, t_coord **coords, int *i){
 		if (*i == 0 && !first)
 			ft_error(env);
 		coords[*i] = ft_new_coord(
-					(env->y % 5) - (first->y), (env->y / 5) - first->x);
+			(env->y % 5) - (first->y), (env->y / 5) - first->x);
 		if (!coords[*i])
 			ft_error(env);
 		(*i)++;
@@ -68,7 +69,7 @@ void	ft_parser(t_env *env)
 {
 	t_coord			**coords;
 	t_coord			*first;
-	int					i;
+	int			i;
 
 	env->x = 0;
 	first = NULL;
@@ -86,7 +87,8 @@ void	ft_parser(t_env *env)
 	}
 }
 
-void	ft_check_returns(t_env *env){
+void	ft_check_returns(t_env *env)
+{
 	int i;
 	int returns;
 
