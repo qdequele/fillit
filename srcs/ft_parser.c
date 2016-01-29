@@ -101,6 +101,7 @@ void	ft_check_returns(t_env *env)
 			returns++;
 		i++;
 	}
-	if (returns != (4 + (env->pieces_count - 1) * 5))
+	if ((env->pieces_count == 1 && returns != 3) ||
+	    (env->pieces_count > 1 && returns != (env->pieces_count * 4)))
 		ft_error(env);
 }
