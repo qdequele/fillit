@@ -6,7 +6,7 @@
 /*   By: qdequele <qdequele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/06 13:26:46 by bjamin            #+#    #+#             */
-/*   Updated: 2016/01/06 23:41:59 by qdequele         ###   ########.fr       */
+/*   Updated: 2016/02/09 16:40:35 by qdequele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,10 @@ void	ft_debug(char *str, t_env *env)
 	ft_putnbr(env->height);
 	ft_putstr("\nenv->width : ");
 	ft_putnbr(env->width);
+	ft_putstr("\nenv->near : ");
+	ft_putnbr(env->near);
+	ft_putstr("\nenv->returns : ");
+	ft_putnbr(env->returns);
 	ft_putstr("\nenv->pieces_count : ");
 	ft_putnbr(env->pieces_count);
 	ft_putstr("\nenv->current_index : ");

@@ -6,7 +6,7 @@
 /*   By: qdequele <qdequele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/15 16:02:51 by qdequele          #+#    #+#             */
-/*   Updated: 2016/01/06 23:54:11 by qdequele         ###   ########.fr       */
+/*   Updated: 2016/02/09 11:35:18 by qdequele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ typedef struct		s_env
 	int				offset;
 	int				map_size;
 	int				step;
+	int				near;
+	int				returns;
 	t_tetriminos	*current_tetrimino;
 	t_tetriminos	*pieces;
 	char			**map;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_fillit.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bjamin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: qdequele <qdequele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/15 16:00:29 by bjamin            #+#    #+#             */
-/*   Updated: 2016/01/05 15:46:40 by bjamin           ###   ########.fr       */
+/*   Updated: 2016/02/09 11:35:30 by qdequele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int		ft_init(t_env *env)
 	env->str = NULL;
 	env->offset = 0;
 	env->step = 0;
+	env->near = 0;
+	env->returns = 0;
 	env->x = 0;
 	env->y = 0;
 	env->width = 0;

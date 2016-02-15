@@ -6,7 +6,7 @@
 /*   By: qdequele <qdequele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/15 15:55:35 by qdequele          #+#    #+#             */
-/*   Updated: 2016/01/06 23:49:18 by qdequele         ###   ########.fr       */
+/*   Updated: 2016/02/09 18:00:21 by qdequele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,17 +91,18 @@ void	ft_parser(t_env *env)
 void	ft_check_returns(t_env *env)
 {
 	int i;
-	int returns;
 
 	i = 0;
-	returns = 0;
+	env->returns = 0;
 	while (env->str[i] != '\0')
 	{
 		if (env->str[i] == '\n')
-			returns++;
+			env->returns++;
 		i++;
 	}
-	if ((env->pieces_count == 1 && returns != 3) ||
-	    (env->pieces_count > 1 && returns != (env->pieces_count * 4)))
+	if ((env->pieces_count == 1 && env->returns != 4)
+		|| (env->pieces_count > 1
+			&& env->returns != ((env->pieces_count * 4)
+				+ (env->pieces_count - 1))))
 		ft_error(env);
 }

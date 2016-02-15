@@ -6,7 +6,7 @@
 /*   By: qdequele <qdequele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/15 15:55:35 by qdequele          #+#    #+#             */
-/*   Updated: 2016/01/06 23:42:07 by qdequele         ###   ########.fr       */
+/*   Updated: 2016/02/09 18:00:33 by qdequele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,41 +36,40 @@ int		ft_check_near(t_env *env)
 		|| (RIGHT && BOT) || (RIGHT && LEFT) || (BOT && LEFT)));
 }
 
+void	ft_check_case(t_env *env)
+{
+	ft_check_char(env);
+	env->near += ft_check_near(env);
+	if (env->str[env->x + env->y] == '#')
+		env->width++;
+	if (env->str[env->x + env->y++] == '\n')
+	{
+		env->height++;
+		if (env->y % 5 != 0)
+			ft_error(env);
+	}
+}
+
 void	ft_check_tetriminos(t_env *env)
 {
-	int		near;
-
 	env->x = 0;
 	while (env->str[env->x] != '\0')
 	{
 		env->y = 0;
 		env->width = 0;
 		env->height = 0;
-		near = 0;
+		env->near = 0;
 		while (env->str[env->x + env->y] != '\0' && env->y < 20)
 		{
-			ft_check_char(env);
-			near += ft_check_near(env);
-			if (env->str[env->x + env->y] == '#')
-				env->width++;
-			if (env->str[env->x + env->y++] == '\n')
-			{
-				env->height++;
-				if (env->y % 5 != 0)
-				    ft_error(env);
-			}
-				
+			ft_check_case(env);
 		}
-		if (!(env->height == 4 || env->height == 3)
-			|| env->width != 4
+		if (env->height != 4 || env->width != 4
 			|| (env->str[env->x + env->y] != '\n'
 			&& env->str[env->x + env->y] != '\0')
-			|| env->str[env->x + env->y + 1] == '\n' || near == 0)
-		    ft_error(env);
+			|| env->str[env->x + env->y + 1] == '\n' || env->near == 0)
+			ft_error(env);
 		env->x += 21;
 	}
-	if (env->y != 19)
-		ft_error(env);
 }
 
 void	ft_push_tetrimino(t_env *env, t_coord **coords)
