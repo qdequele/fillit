@@ -6,7 +6,7 @@
 /*   By: qdequele <qdequele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/06 13:26:46 by bjamin            #+#    #+#             */
-/*   Updated: 2016/02/09 16:40:35 by qdequele         ###   ########.fr       */
+/*   Updated: 2016/02/15 12:54:08 by qdequele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ int		ft_show_map(t_env *env)
 		ft_putchar('\n');
 		y++;
 	}
-	ft_putchar('\n');
 	return (1);
 }
 
